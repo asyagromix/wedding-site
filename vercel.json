@@ -2,15 +2,11 @@
   "rewrites": [
     {
       "source": "/submit_form",
-      "destination": "/api/index"
+      "destination": "/api/submit_form"
     },
     {
       "source": "/link_vk.php",
-      "destination": "/api/index"
-    },
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/index"
+      "destination": "/api/link_vk.php"
     }
   ]
 }
