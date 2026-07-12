@@ -7,6 +7,14 @@
     {
       "source": "/link_vk.php",
       "destination": "/api/link_vk.php"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
