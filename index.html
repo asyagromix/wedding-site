@@ -24,7 +24,7 @@
       const origSetAttribute = el.setAttribute;
       el.setAttribute = function(name, val) {
         if (name === "src" && typeof val === "string" && val.startsWith("/_next/")) {
-          val = "https://eventrix.pro" + val;
+          val = "" + val;
         }
         return origSetAttribute.call(this, name, val);
       };
@@ -33,7 +33,7 @@
         Object.defineProperty(el, "src", {
           set: function(val) {
             if (val && typeof val === "string" && val.startsWith("/_next/")) {
-              val = "https://eventrix.pro" + val;
+              val = "" + val;
             }
             this.setAttribute("src", val);
           },
@@ -170,7 +170,7 @@
         });
       }
       if (typeof url === "string" && url.startsWith("/api/")) {
-        arguments[0] = "https://eventrix.pro" + url;
+        arguments[0] = "" + url;
       }
       return origFetch.apply(this, arguments);
     };
@@ -180,258 +180,258 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
-    <link rel="preload" href="https://eventrix.pro/_next/static/media/215b7dfa0255317a-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="https://eventrix.pro/_next/static/media/6210b7a783c2f3da-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/_next/static/media/215b7dfa0255317a-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/_next/static/media/6210b7a783c2f3da-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="image" href="https://mc.yandex.ru/watch/96422774" />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/846c168d0adb3d59.css"
+      href="/_next/static/css/846c168d0adb3d59.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/e8db3b3f4c60e44b.css"
+      href="/_next/static/css/e8db3b3f4c60e44b.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/030d1ba2a84f0bf9.css"
+      href="/_next/static/css/030d1ba2a84f0bf9.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/802aa796c39f95a3.css"
+      href="/_next/static/css/802aa796c39f95a3.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/bb1a6b2edb69f088.css"
+      href="/_next/static/css/bb1a6b2edb69f088.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/6ddacd31af88143a.css"
+      href="/_next/static/css/6ddacd31af88143a.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/047326b6e69a1dd2.css"
+      href="/_next/static/css/047326b6e69a1dd2.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/8dd7e35e2b3c46bf.css"
+      href="/_next/static/css/8dd7e35e2b3c46bf.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/1c94a4f710015a15.css"
+      href="/_next/static/css/1c94a4f710015a15.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/ba73014e337c7061.css"
+      href="/_next/static/css/ba73014e337c7061.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/f9cc344e87f314ad.css"
+      href="/_next/static/css/f9cc344e87f314ad.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/1ef87baf19cfcbde.css"
+      href="/_next/static/css/1ef87baf19cfcbde.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/ab5c888df0c8884b.css"
+      href="/_next/static/css/ab5c888df0c8884b.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/e17e0fbd8c296403.css"
+      href="/_next/static/css/e17e0fbd8c296403.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/9e35d69c00809e32.css"
+      href="/_next/static/css/9e35d69c00809e32.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/5fa24784e97ef29c.css"
+      href="/_next/static/css/5fa24784e97ef29c.css"
       data-precedence="next"
     />
     <link
       rel="stylesheet"
-      href="https://eventrix.pro/_next/static/css/cbd3cc088a72ed3b.css"
+      href="/_next/static/css/cbd3cc088a72ed3b.css"
       data-precedence="next"
     />
     <link
       rel="preload"
       as="script"
       fetchpriority="low"
-      href="https://eventrix.pro/_next/static/chunks/webpack-7c3cda58df76be79.js"
+      href="/_next/static/chunks/webpack-7c3cda58df76be79.js"
     />
     <script
-      src="https://eventrix.pro/_next/static/chunks/fd9d1056-9109f013d4670639.js"
+      src="/_next/static/chunks/fd9d1056-9109f013d4670639.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/7893-0938fbb6f8e39feb.js"
+      src="/_next/static/chunks/7893-0938fbb6f8e39feb.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/main-app-0f9dce24c4330380.js"
+      src="/_next/static/chunks/main-app-0f9dce24c4330380.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/f97e080b-15278cb7a98eb822.js"
+      src="/_next/static/chunks/f97e080b-15278cb7a98eb822.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/0e762574-5be16695d5602dd8.js"
+      src="/_next/static/chunks/0e762574-5be16695d5602dd8.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/479ba886-71dae2f9be07bcc1.js"
+      src="/_next/static/chunks/479ba886-71dae2f9be07bcc1.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/ee560e2c-a4cebb88258c6017.js"
+      src="/_next/static/chunks/ee560e2c-a4cebb88258c6017.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/9c4e2130-e1c08a5bea9bd51d.js"
+      src="/_next/static/chunks/9c4e2130-e1c08a5bea9bd51d.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/eec3d76d-9533b0bcb9739877.js"
+      src="/_next/static/chunks/eec3d76d-9533b0bcb9739877.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/8885-596585519b9db558.js"
+      src="/_next/static/chunks/8885-596585519b9db558.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/7336-628b1a64126cb343.js"
+      src="/_next/static/chunks/7336-628b1a64126cb343.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/865-5625168de96254be.js"
+      src="/_next/static/chunks/865-5625168de96254be.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/7204-5e1d731417c72d61.js"
+      src="/_next/static/chunks/7204-5e1d731417c72d61.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/140-55a765c4c01bb837.js"
+      src="/_next/static/chunks/140-55a765c4c01bb837.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/5184-b1bae0db862ed3e3.js"
+      src="/_next/static/chunks/5184-b1bae0db862ed3e3.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/app/(template)/layout-c28c89d7f272bec1.js"
+      src="/_next/static/chunks/app/(template)/layout-c28c89d7f272bec1.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/8232-1f2de4eb5ab5ce7a.js"
+      src="/_next/static/chunks/8232-1f2de4eb5ab5ce7a.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/1085-2a9bd2d08e6e5051.js"
+      src="/_next/static/chunks/1085-2a9bd2d08e6e5051.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/1273-7db7aaf120436a9b.js"
+      src="/_next/static/chunks/1273-7db7aaf120436a9b.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/376-c8096250d46f741c.js"
+      src="/_next/static/chunks/376-c8096250d46f741c.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/app/(client)/error-70f810e674e9496e.js"
+      src="/_next/static/chunks/app/(client)/error-70f810e674e9496e.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/app/error-1dbc2ddd9032154c.js"
+      src="/_next/static/chunks/app/error-1dbc2ddd9032154c.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/app/global-error-ae6cb3e3489afaad.js"
+      src="/_next/static/chunks/app/global-error-ae6cb3e3489afaad.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/fca4dd8b-52ae819e34c586a0.js"
+      src="/_next/static/chunks/fca4dd8b-52ae819e34c586a0.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/f8025e75-0abe939113487316.js"
+      src="/_next/static/chunks/f8025e75-0abe939113487316.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/f7333993-a1ea08a518d2153b.js"
+      src="/_next/static/chunks/f7333993-a1ea08a518d2153b.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/619edb50-2f68c5d2d39f73d8.js"
+      src="/_next/static/chunks/619edb50-2f68c5d2d39f73d8.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/66ec4792-5370c0730ddcc829.js"
+      src="/_next/static/chunks/66ec4792-5370c0730ddcc829.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/3147-f2365913fd3268bb.js"
+      src="/_next/static/chunks/3147-f2365913fd3268bb.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/5106-4ce3c74eafe3a7cd.js"
+      src="/_next/static/chunks/5106-4ce3c74eafe3a7cd.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/811-475bab1b767f159a.js"
+      src="/_next/static/chunks/811-475bab1b767f159a.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/563-cdd1f3d3749411c7.js"
+      src="/_next/static/chunks/563-cdd1f3d3749411c7.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/676-2925c9a005fe60ff.js"
+      src="/_next/static/chunks/676-2925c9a005fe60ff.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/681-1e2813902faf2aaf.js"
+      src="/_next/static/chunks/681-1e2813902faf2aaf.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/1724-72673139e9382068.js"
+      src="/_next/static/chunks/1724-72673139e9382068.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/7980-3bf693277f6fc8b5.js"
+      src="/_next/static/chunks/7980-3bf693277f6fc8b5.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/6168-5f48d904afa0954b.js"
+      src="/_next/static/chunks/6168-5f48d904afa0954b.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/7079-ce8a1af31b7c4c0a.js"
+      src="/_next/static/chunks/7079-ce8a1af31b7c4c0a.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/1959-8180a685dfbf68e4.js"
+      src="/_next/static/chunks/1959-8180a685dfbf68e4.js"
       async=""
     ></script>
     <script
-      src="https://eventrix.pro/_next/static/chunks/app/(client)/%5BinviteURL%5D/page-f00f957b325824a6.js"
+      src="/_next/static/chunks/app/(client)/%5BinviteURL%5D/page-f00f957b325824a6.js"
       async=""
     ></script>
     <link rel="preload" href="https://s.eventrix.pro/script.js" as="script" />
@@ -443,7 +443,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
     <meta name="next-size-adjust" />
     <script
-      src="https://eventrix.pro/_next/static/chunks/polyfills-42372ed130431b0a.js"
+      src="/_next/static/chunks/polyfills-42372ed130431b0a.js"
       nomodule=""
     ></script>
     <style
@@ -1977,7 +1977,7 @@ setInterval(() => {
     <!-- Preloader removed -->
     <div
       style="
-        background-image: url(&quot;https://eventrix.pro/templates/flexible/images/backgroundsDesktop/1.jpg&quot;);
+        background-image: url(&quot;/templates/flexible/images/backgroundsDesktop/1.jpg&quot;);
       "
       class="css-8iop5n"
     ></div>
@@ -1996,7 +1996,7 @@ setInterval(() => {
     ><!--/$--><span
     ></span><span id="__chakra_env" hidden=""></span>
     <script
-      src="https://eventrix.pro/_next/static/chunks/webpack-7c3cda58df76be79.js"
+      src="/_next/static/chunks/webpack-7c3cda58df76be79.js"
       async=""
     ></script>
     <script>
@@ -2006,7 +2006,7 @@ setInterval(() => {
     <script>
       self.__next_f.push([
         1,
-        '1:HL["https://eventrix.pro/_next/static/css/846c168d0adb3d59.css","style"]\n2:HL["https://eventrix.pro/_next/static/css/e8db3b3f4c60e44b.css","style"]\n3:HL["https://eventrix.pro/_next/static/media/215b7dfa0255317a-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]\n4:HL["https://eventrix.pro/_next/static/media/6210b7a783c2f3da-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]\n5:HL["https://eventrix.pro/_next/static/css/030d1ba2a84f0bf9.css","style"]\n6:HL["https://eventrix.pro/_next/static/css/802aa796c39f95a3.css","style"]\n7:HL["https://eventrix.pro/_next/static/css/bb1a6b2edb69f088.css","style"]\n8:HL["https://eventrix.pro/_next/static/css/6ddacd31af88143a.css","style"]\n9:HL["https://eventrix.pro/_next/static/css/047326b6e69a1dd2.css","style"]\na:HL["https://eventrix.pro/_next/static/css/8dd7e35e2b3c46bf.css","style"]\nb:HL["https://eventrix.pro/_next/static/css/1c94a4f710015a15.css","style"]\nc:HL["https://eventrix.pro/_next/static/css/ba73014e337c7061.css","style"]\nd:HL["https://eventrix.pro/_next/static/css/f9cc344e87f314ad.css","style"]\ne:HL["https://eventrix.pro/_next/static/css/1ef87baf19cfcbde.css","style"]\nf:HL["https://eventrix.pro/_next/static/css/ab5c888df0c8884b.css","style"]\n10:HL["https://eventrix.pro/_next/static/css/e17e0fbd8c296403.css","style"]\n11:HL["https://eventrix.pro/_next/static/css/9e35d69c00809e32.css","style"]\n12:HL["https://eventrix.pro/_next/static/css/5fa24784e97ef29c.css","style"]\n13:HL["https://eventrix.pro/_next/static/css/cbd3cc088a72ed3b.css","style"]\n',
+        '1:HL["/_next/static/css/846c168d0adb3d59.css","style"]\n2:HL["/_next/static/css/e8db3b3f4c60e44b.css","style"]\n3:HL["/_next/static/media/215b7dfa0255317a-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]\n4:HL["/_next/static/media/6210b7a783c2f3da-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]\n5:HL["/_next/static/css/030d1ba2a84f0bf9.css","style"]\n6:HL["/_next/static/css/802aa796c39f95a3.css","style"]\n7:HL["/_next/static/css/bb1a6b2edb69f088.css","style"]\n8:HL["/_next/static/css/6ddacd31af88143a.css","style"]\n9:HL["/_next/static/css/047326b6e69a1dd2.css","style"]\na:HL["/_next/static/css/8dd7e35e2b3c46bf.css","style"]\nb:HL["/_next/static/css/1c94a4f710015a15.css","style"]\nc:HL["/_next/static/css/ba73014e337c7061.css","style"]\nd:HL["/_next/static/css/f9cc344e87f314ad.css","style"]\ne:HL["/_next/static/css/1ef87baf19cfcbde.css","style"]\nf:HL["/_next/static/css/ab5c888df0c8884b.css","style"]\n10:HL["/_next/static/css/e17e0fbd8c296403.css","style"]\n11:HL["/_next/static/css/9e35d69c00809e32.css","style"]\n12:HL["/_next/static/css/5fa24784e97ef29c.css","style"]\n13:HL["/_next/static/css/cbd3cc088a72ed3b.css","style"]\n',
       ]);
     </script>
     <script>
@@ -2024,7 +2024,7 @@ setInterval(() => {
     <script>
       self.__next_f.push([
         1,
-        '0:["$","$L14",null,{"buildId":"7whPHpLqH9k8KJ4HQp3mu","assetPrefix":"https://eventrix.pro","urlParts":["","47346WmjuON1HvoGFe850"],"initialTree":["",{"children":["(client)",{"children":[["inviteURL","47346WmjuON1HvoGFe850","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],"initialSeedData":["",{"children":["(client)",{"children":[["inviteURL","47346WmjuON1HvoGFe850","d"],{"children":["__PAGE__",{},[["$L15","$L16",[["$","link","0",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/030d1ba2a84f0bf9.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/802aa796c39f95a3.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/bb1a6b2edb69f088.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/6ddacd31af88143a.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","4",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/047326b6e69a1dd2.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","5",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/8dd7e35e2b3c46bf.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","6",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/1c94a4f710015a15.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","7",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/ba73014e337c7061.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","8",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/f9cc344e87f314ad.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","9",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/1ef87baf19cfcbde.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","10",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/ab5c888df0c8884b.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","11",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/e17e0fbd8c296403.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","12",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/9e35d69c00809e32.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","13",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/5fa24784e97ef29c.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","14",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/cbd3cc088a72ed3b.css","precedence":"next","crossOrigin":"$undefined"}]]],null],null]},[null,["$","$L17",null,{"parallelRouterKey":"children","segmentPath":["children","(client)","children","$18","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L19",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/e8db3b3f4c60e44b.css","precedence":"next","crossOrigin":"$undefined"}]],["$","$L1a",null,{"children":["$","$L1b",null,{"children":["$","$L17",null,{"parallelRouterKey":"children","segmentPath":["children","(client)","children"],"error":"$1c","errorStyles":[["$","link","0",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/030d1ba2a84f0bf9.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/802aa796c39f95a3.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/bb1a6b2edb69f088.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/6ddacd31af88143a.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","4",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/047326b6e69a1dd2.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","5",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/8dd7e35e2b3c46bf.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","6",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/1c94a4f710015a15.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","7",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/ba73014e337c7061.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","8",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/f9cc344e87f314ad.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","9",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/1ef87baf19cfcbde.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","10",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/ab5c888df0c8884b.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","11",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/e17e0fbd8c296403.css","precedence":"next","crossOrigin":"$undefined"}]],"errorScripts":[],"template":["$","$L19",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"style":{"position":"fixed","inset":0,"zIndex":1,"background":"#fff"},"children":["$","div",null,{"style":{"position":"absolute","left":0,"right":0,"top":"50%","transform":"translateY(-50%)","maxWidth":710,"margin":"0 auto","textAlign":"center","padding":"0 15px","lineHeight":1.4},"children":[["$","div",null,{"children":["$","h1",null,{"className":"__className_093968","style":{"fontSize":"clamp(150px, 25vw, 182px)","lineHeight":"200px","fontWeight":400,"margin":0,"color":"#4299e1","textTransform":"uppercase"},"children":"404"}]}],["$","h2",null,{"className":"__className_7408c1","style":{"fontSize":22,"fontWeight":400,"color":"#222","margin":0},"children":"Ой, похоже, что это приглашение или страница не найдена!"}],["$","a",null,{"href":"/","className":"__className_7408c1","style":{"display":"inline-block","fontWeight":700,"borderRadius":15,"textDecoration":"none","color":"#4299e1","marginTop":20},"children":[["$","span",null,{"style":{"position":"relative","top":-2,"border":"solid #4299e1","borderWidth":"0 3px 3px 0","display":"inline-block","padding":3,"WebkitTransform":"rotate(135deg)","msTransform":"rotate(135deg)","transform":"rotate(135deg)"}}],"На главную страницу"]}]]}]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/339f49865f561b29.css","precedence":"next","crossOrigin":"$undefined"}]]}]}]}]],null],null]},[[[["$","link","0",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/846c168d0adb3d59.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ru","translate":"no","data-theme":"light","children":["$","body",null,{"children":["$","$L17",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$1d","errorStyles":[["$","link","0",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/030d1ba2a84f0bf9.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/802aa796c39f95a3.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/bb1a6b2edb69f088.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/6ddacd31af88143a.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","4",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/047326b6e69a1dd2.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","5",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/8dd7e35e2b3c46bf.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","6",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/1c94a4f710015a15.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","7",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/ba73014e337c7061.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","8",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/f9cc344e87f314ad.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","9",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/1ef87baf19cfcbde.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","10",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/ab5c888df0c8884b.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","11",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/e17e0fbd8c296403.css","precedence":"next","crossOrigin":"$undefined"}]],"errorScripts":[],"template":["$","$L19",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"style":{"position":"fixed","inset":0,"zIndex":1,"background":"#fff"},"children":["$","div",null,{"style":{"position":"absolute","left":0,"right":0,"top":"50%","transform":"translateY(-50%)","maxWidth":710,"margin":"0 auto","textAlign":"center","padding":"0 15px","lineHeight":1.4},"children":[["$","div",null,{"children":["$","h1",null,{"className":"__className_093968","style":{"fontSize":"clamp(150px, 25vw, 182px)","lineHeight":"200px","fontWeight":400,"margin":0,"color":"#4299e1","textTransform":"uppercase"},"children":"404"}]}],["$","h2",null,{"className":"__className_7408c1","style":{"fontSize":22,"fontWeight":400,"color":"#222","margin":0},"children":"Ой, похоже, что это приглашение или страница не найдена!"}],["$","a",null,{"href":"/","className":"__className_7408c1","style":{"display":"inline-block","fontWeight":700,"borderRadius":15,"textDecoration":"none","color":"#4299e1","marginTop":20},"children":[["$","span",null,{"style":{"position":"relative","top":-2,"border":"solid #4299e1","borderWidth":"0 3px 3px 0","display":"inline-block","padding":3,"WebkitTransform":"rotate(135deg)","msTransform":"rotate(135deg)","transform":"rotate(135deg)"}}],"На главную страницу"]}]]}]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"https://eventrix.pro/_next/static/css/339f49865f561b29.css","precedence":"next","crossOrigin":"$undefined"}]]}]}]}]],null],null],"couldBeIntercepted":false,"initialHead":[null,"$L1e"],"globalErrorComponent":"$1f","missingSlots":"$W20"}]\n',
+        '0:["$","$L14",null,{"buildId":"7whPHpLqH9k8KJ4HQp3mu","assetPrefix":"","urlParts":["","47346WmjuON1HvoGFe850"],"initialTree":["",{"children":["(client)",{"children":[["inviteURL","47346WmjuON1HvoGFe850","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],"initialSeedData":["",{"children":["(client)",{"children":[["inviteURL","47346WmjuON1HvoGFe850","d"],{"children":["__PAGE__",{},[["$L15","$L16",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/030d1ba2a84f0bf9.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/802aa796c39f95a3.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/bb1a6b2edb69f088.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/6ddacd31af88143a.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","4",{"rel":"stylesheet","href":"/_next/static/css/047326b6e69a1dd2.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","5",{"rel":"stylesheet","href":"/_next/static/css/8dd7e35e2b3c46bf.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","6",{"rel":"stylesheet","href":"/_next/static/css/1c94a4f710015a15.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","7",{"rel":"stylesheet","href":"/_next/static/css/ba73014e337c7061.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","8",{"rel":"stylesheet","href":"/_next/static/css/f9cc344e87f314ad.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","9",{"rel":"stylesheet","href":"/_next/static/css/1ef87baf19cfcbde.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","10",{"rel":"stylesheet","href":"/_next/static/css/ab5c888df0c8884b.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","11",{"rel":"stylesheet","href":"/_next/static/css/e17e0fbd8c296403.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","12",{"rel":"stylesheet","href":"/_next/static/css/9e35d69c00809e32.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","13",{"rel":"stylesheet","href":"/_next/static/css/5fa24784e97ef29c.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","14",{"rel":"stylesheet","href":"/_next/static/css/cbd3cc088a72ed3b.css","precedence":"next","crossOrigin":"$undefined"}]]],null],null]},[null,["$","$L17",null,{"parallelRouterKey":"children","segmentPath":["children","(client)","children","$18","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L19",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/e8db3b3f4c60e44b.css","precedence":"next","crossOrigin":"$undefined"}]],["$","$L1a",null,{"children":["$","$L1b",null,{"children":["$","$L17",null,{"parallelRouterKey":"children","segmentPath":["children","(client)","children"],"error":"$1c","errorStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/030d1ba2a84f0bf9.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/802aa796c39f95a3.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/bb1a6b2edb69f088.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/6ddacd31af88143a.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","4",{"rel":"stylesheet","href":"/_next/static/css/047326b6e69a1dd2.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","5",{"rel":"stylesheet","href":"/_next/static/css/8dd7e35e2b3c46bf.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","6",{"rel":"stylesheet","href":"/_next/static/css/1c94a4f710015a15.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","7",{"rel":"stylesheet","href":"/_next/static/css/ba73014e337c7061.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","8",{"rel":"stylesheet","href":"/_next/static/css/f9cc344e87f314ad.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","9",{"rel":"stylesheet","href":"/_next/static/css/1ef87baf19cfcbde.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","10",{"rel":"stylesheet","href":"/_next/static/css/ab5c888df0c8884b.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","11",{"rel":"stylesheet","href":"/_next/static/css/e17e0fbd8c296403.css","precedence":"next","crossOrigin":"$undefined"}]],"errorScripts":[],"template":["$","$L19",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"style":{"position":"fixed","inset":0,"zIndex":1,"background":"#fff"},"children":["$","div",null,{"style":{"position":"absolute","left":0,"right":0,"top":"50%","transform":"translateY(-50%)","maxWidth":710,"margin":"0 auto","textAlign":"center","padding":"0 15px","lineHeight":1.4},"children":[["$","div",null,{"children":["$","h1",null,{"className":"__className_093968","style":{"fontSize":"clamp(150px, 25vw, 182px)","lineHeight":"200px","fontWeight":400,"margin":0,"color":"#4299e1","textTransform":"uppercase"},"children":"404"}]}],["$","h2",null,{"className":"__className_7408c1","style":{"fontSize":22,"fontWeight":400,"color":"#222","margin":0},"children":"Ой, похоже, что это приглашение или страница не найдена!"}],["$","a",null,{"href":"/","className":"__className_7408c1","style":{"display":"inline-block","fontWeight":700,"borderRadius":15,"textDecoration":"none","color":"#4299e1","marginTop":20},"children":[["$","span",null,{"style":{"position":"relative","top":-2,"border":"solid #4299e1","borderWidth":"0 3px 3px 0","display":"inline-block","padding":3,"WebkitTransform":"rotate(135deg)","msTransform":"rotate(135deg)","transform":"rotate(135deg)"}}],"На главную страницу"]}]]}]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/339f49865f561b29.css","precedence":"next","crossOrigin":"$undefined"}]]}]}]}]],null],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/846c168d0adb3d59.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ru","translate":"no","data-theme":"light","children":["$","body",null,{"children":["$","$L17",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$1d","errorStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/030d1ba2a84f0bf9.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/802aa796c39f95a3.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/bb1a6b2edb69f088.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/6ddacd31af88143a.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","4",{"rel":"stylesheet","href":"/_next/static/css/047326b6e69a1dd2.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","5",{"rel":"stylesheet","href":"/_next/static/css/8dd7e35e2b3c46bf.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","6",{"rel":"stylesheet","href":"/_next/static/css/1c94a4f710015a15.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","7",{"rel":"stylesheet","href":"/_next/static/css/ba73014e337c7061.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","8",{"rel":"stylesheet","href":"/_next/static/css/f9cc344e87f314ad.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","9",{"rel":"stylesheet","href":"/_next/static/css/1ef87baf19cfcbde.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","10",{"rel":"stylesheet","href":"/_next/static/css/ab5c888df0c8884b.css","precedence":"next","crossOrigin":"$undefined"}],["$","link","11",{"rel":"stylesheet","href":"/_next/static/css/e17e0fbd8c296403.css","precedence":"next","crossOrigin":"$undefined"}]],"errorScripts":[],"template":["$","$L19",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","div",null,{"style":{"position":"fixed","inset":0,"zIndex":1,"background":"#fff"},"children":["$","div",null,{"style":{"position":"absolute","left":0,"right":0,"top":"50%","transform":"translateY(-50%)","maxWidth":710,"margin":"0 auto","textAlign":"center","padding":"0 15px","lineHeight":1.4},"children":[["$","div",null,{"children":["$","h1",null,{"className":"__className_093968","style":{"fontSize":"clamp(150px, 25vw, 182px)","lineHeight":"200px","fontWeight":400,"margin":0,"color":"#4299e1","textTransform":"uppercase"},"children":"404"}]}],["$","h2",null,{"className":"__className_7408c1","style":{"fontSize":22,"fontWeight":400,"color":"#222","margin":0},"children":"Ой, похоже, что это приглашение или страница не найдена!"}],["$","a",null,{"href":"/","className":"__className_7408c1","style":{"display":"inline-block","fontWeight":700,"borderRadius":15,"textDecoration":"none","color":"#4299e1","marginTop":20},"children":[["$","span",null,{"style":{"position":"relative","top":-2,"border":"solid #4299e1","borderWidth":"0 3px 3px 0","display":"inline-block","padding":3,"WebkitTransform":"rotate(135deg)","msTransform":"rotate(135deg)","transform":"rotate(135deg)"}}],"На главную страницу"]}]]}]}],"notFoundStyles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/339f49865f561b29.css","precedence":"next","crossOrigin":"$undefined"}]]}]}]}]],null],null],"couldBeIntercepted":false,"initialHead":[null,"$L1e"],"globalErrorComponent":"$1f","missingSlots":"$W20"}]\n',
       ]);
     </script>
     <script>
