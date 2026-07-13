@@ -13,6 +13,14 @@
       "destination": "/api/index.py"
     },
     {
+      "source": "/_next/:match*",
+      "destination": "https://eventrix.pro/_next/:match*"
+    },
+    {
+      "source": "/templates/:match*",
+      "destination": "https://eventrix.pro/templates/:match*"
+    },
+    {
       "source": "/((?!_next/|templates/|usersFiles/|favicon\\.ico).*)",
       "destination": "/index.html"
     }

@@ -35,48 +35,7 @@
     <link rel="apple-touch-icon" href="og-image.jpg" />
     <script>
   (function() {
-    
-    const origCreateElement = document.createElement;
-    document.createElement = function(tagName) {
-      const el = origCreateElement.call(document, tagName);
-      const origSetAttribute = el.setAttribute;
-      el.setAttribute = function(name, val) {
-        let strVal = val ? val.toString() : "";
-        if ((name === "src" || name === "href") && strVal && (strVal.startsWith("/_next/") || strVal.startsWith("/templates/"))) {
-          val = "https://eventrix.pro" + strVal;
-        }
-        return origSetAttribute.call(this, name, val);
-      };
-
-      if (tagName.toLowerCase() === "script") {
-        Object.defineProperty(el, "src", {
-          set: function(val) {
-            let strVal = val ? val.toString() : "";
-            if (strVal && (strVal.startsWith("/_next/") || strVal.startsWith("/templates/"))) {
-              val = "https://eventrix.pro" + strVal;
-            }
-            this.setAttribute("src", val);
-          },
-          get: function() {
-            return this.getAttribute("src");
-          }
-        });
-      } else if (tagName.toLowerCase() === "link") {
-        Object.defineProperty(el, "href", {
-          set: function(val) {
-            let strVal = val ? val.toString() : "";
-            if (strVal && (strVal.startsWith("/_next/") || strVal.startsWith("/templates/"))) {
-              val = "https://eventrix.pro" + strVal;
-            }
-            this.setAttribute("href", val);
-          },
-          get: function() {
-            return this.getAttribute("href");
-          }
-        });
-      }
-      return el;
-    };
+    // Removed createElement interceptor since Vercel handles rewrites.
 
             // Inject CSS rule for the text block override and overscroll
     const style = document.createElement('style');
