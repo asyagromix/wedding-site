@@ -21,7 +21,7 @@
       "destination": "https://eventrix.pro/templates/:match*"
     },
     {
-      "source": "/((?!_next/|templates/|usersFiles/|favicon\\.ico).*)",
+      "source": "/((?!_next/|templates/|usersFiles/|favicon\\.ico|.*\\.jpg|.*\\.png).*)",
       "destination": "/index.html"
     }
   ]
