@@ -1660,7 +1660,7 @@
 (function() {
   const replaceImages = () => {
     document.querySelectorAll('img').forEach(img => {
-      if (img.src && img.src.includes('selstorage.ru')) {
+      if (img.src && (img.src.includes('selstorage.ru') || img.src.includes('usersFiles'))) {
         img.removeAttribute('srcset');
         img.removeAttribute('sizes');
         if (img.src.includes('inviteMainPhoto')) img.src = '/photo1.jpg';
@@ -1669,7 +1669,7 @@
       }
     });
     document.querySelectorAll('*').forEach(el => {
-      if (el.style.backgroundImage && el.style.backgroundImage.includes('selstorage.ru')) {
+      if (el.style.backgroundImage && (el.style.backgroundImage.includes('selstorage.ru') || el.style.backgroundImage.includes('usersFiles'))) {
         if (el.style.backgroundImage.includes('inviteMainPhoto')) el.style.backgroundImage = 'url(/photo1.jpg)';
         else if (el.style.backgroundImage.includes('invitePhoto2x')) el.style.backgroundImage = 'url(/photo3.jpg)';
         else if (el.style.backgroundImage.includes('invitePhoto')) el.style.backgroundImage = 'url(/photo2.jpg)';
