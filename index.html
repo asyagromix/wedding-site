@@ -41,8 +41,8 @@
       const el = origCreateElement.call(document, tagName);
       const origSetAttribute = el.setAttribute;
       el.setAttribute = function(name, val) {
-        if (name === "src" && typeof val === "string" && val.startsWith("/_next/")) {
-          val = "" + val;
+        if ((name === "src" || name === "href") && typeof val === "string" && (val.startsWith("/_next/") || val.startsWith("/templates/"))) {
+          val = "https://eventrix.pro" + val;
         }
         return origSetAttribute.call(this, name, val);
       };
@@ -50,13 +50,25 @@
       if (tagName.toLowerCase() === "script") {
         Object.defineProperty(el, "src", {
           set: function(val) {
-            if (val && typeof val === "string" && val.startsWith("/_next/")) {
-              val = "" + val;
+            if (val && typeof val === "string" && (val.startsWith("/_next/") || val.startsWith("/templates/"))) {
+              val = "https://eventrix.pro" + val;
             }
             this.setAttribute("src", val);
           },
           get: function() {
             return this.getAttribute("src");
+          }
+        });
+      } else if (tagName.toLowerCase() === "link") {
+        Object.defineProperty(el, "href", {
+          set: function(val) {
+            if (val && typeof val === "string" && (val.startsWith("/_next/") || val.startsWith("/templates/"))) {
+              val = "https://eventrix.pro" + val;
+            }
+            this.setAttribute("href", val);
+          },
+          get: function() {
+            return this.getAttribute("href");
           }
         });
       }
