@@ -13,7 +13,7 @@
       "destination": "/api/index.py"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!_next/|templates/|usersFiles/|favicon\\.ico).*)",
       "destination": "/index.html"
     }
   ]
