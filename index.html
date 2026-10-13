@@ -1,6 +1,27 @@
 <!doctype html>
 <html lang="ru" translate="no" data-theme="light">
   <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+<script>
+(function() {
+  var origDesc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
+  if (origDesc && origDesc.set) {
+    Object.defineProperty(HTMLScriptElement.prototype, 'src', {
+      set: function(val) {
+        if (typeof val === 'string' && val.indexOf('/_next/') !== -1 && val.indexOf('t=') === -1) {
+          val = val + (val.indexOf('?') !== -1 ? '&' : '?') + 't=' + Date.now();
+        }
+        return origDesc.set.call(this, val);
+      },
+      get: function() {
+        return origDesc.get.call(this);
+      }
+    });
+  }
+})();
+</script>
     <meta charset="utf-8" />
     <!-- Social Media Badges (OpenGraph & Twitter) -->
     <meta property="og:title" content="Свадебное Приглашение - Денис и Полина" />
@@ -24,7 +45,7 @@
       const origSetAttribute = el.setAttribute;
       el.setAttribute = function(name, val) {
         if (name === "src" && typeof val === "string" && val.startsWith("/_next/")) {
-          val = "" + val;
+          val = val + (val.includes("?") ? "&" : "?") + "v=" + Date.now();
         }
         return origSetAttribute.call(this, name, val);
       };
@@ -46,7 +67,7 @@
     };
 
     const origFetch = window.fetch;
-    const mockedApiData = {"error": false, "data": {"notFound": false, "uid": "qygsjdtppqkpk1t0u4ioe850", "type": "wedding", "data": {"UTC": 1795597216214, "timezone": "Europe/Moscow", "locale": "ru", "place": "\u0417\u0410\u0413\u0421", "address": "\u0433. \u041a\u0438\u0440\u043e\u0432, \u0443\u043b.\u041a\u0430\u0440\u043b\u0430 \u041c\u0430\u0440\u043a\u0441\u0430, 23", "man": "\u0414\u0435\u043d\u0438\u0441", "woman": "\u041f\u043e\u043b\u0438\u043d\u0430"}, "blocks": [{"title": "CEDT", "variant": "v1", "isOn": false, "id": "Music", "blocks": {"music": {"type": "music", "data": {"v": "1", "n": false}}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "ndb": true, "id": "Main", "blocks": {"oneName": {"type": "input", "label": "\u041f\u0435\u0440\u0432\u043e\u0435 \u0438\u043c\u044f", "data": "\u0414\u0435\u043d\u0438\u0441", "o": 1}, "twoName": {"type": "input", "label": "\u0412\u0442\u043e\u0440\u043e\u0435 \u0438\u043c\u044f", "data": "\u041f\u043e\u043b\u0438\u043d\u0430", "o": 2}, "subtitle": {"type": "input", "label": "\u041f\u043e\u0434\u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u0421\u0432\u0430\u0434\u0435\u0431\u043d\u043e\u0435 \u041f\u0440\u0438\u0433\u043b\u0430\u0448\u0435\u043d\u0438\u0435", "o": 3}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "Intro", "blocks": {"title": {"type": "textarea", "label": "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u0414\u043e\u0440\u043e\u0433\u0438\u0435\n\u041d\u0410\u0428\u0418 \u0413\u041e\u0421\u0422\u0418", "size": "sm", "h": "80px", "o": 1}, "text": {"type": "textarea", "label": "\u0422\u0435\u043a\u0441\u0442", "data": "\u0415\u0441\u043b\u0438 \u0432\u044b \u0447\u0438\u0442\u0430\u0435\u0442\u0435 \u044d\u0442\u043e \u043f\u0440\u0438\u0433\u043b\u0430\u0448\u0435\u043d\u0438\u0435 \u2013 \u0437\u043d\u0430\u0447\u0438\u0442, \u0432\u044b \u0447\u0430\u0441\u0442\u044c \u043d\u0430\u0448\u0435\u0439 \u0438\u0441\u0442\u043e\u0440\u0438\u0438.\n\u0421\u043f\u0430\u0441\u0438\u0431\u043e, \u0447\u0442\u043e \u0431\u044b\u043b\u0438 \u0441 \u043d\u0430\u043c\u0438 \u0432\u0441\u0451 \u044d\u0442\u043e \u0432\u0440\u0435\u043c\u044f \u2013 \u0440\u044f\u0434\u043e\u043c, \u043c\u044b\u0441\u043b\u0435\u043d\u043d\u043e, \u0432 \u0432\u043e\u0441\u043f\u043e\u043c\u0438\u043d\u0430\u043d\u0438\u044f\u0445.\n\u041c\u044b \u0441 \u0440\u0430\u0434\u043e\u0441\u0442\u044c\u044e \u043f\u0440\u0438\u0433\u043b\u0430\u0448\u0430\u0435\u043c \u0432\u0430\u0441 \u0441\u0442\u0430\u0442\u044c \u0447\u0430\u0441\u0442\u044c\u044e \u043d\u043e\u0432\u043e\u0433\u043e \u0432\u043e\u0441\u043f\u043e\u043c\u0438\u043d\u0430\u043d\u0438\u044f \u2013 \u043d\u0430\u0448\u0435\u0439 \u0441\u0432\u0430\u0434\u044c\u0431\u044b.", "size": "sm", "h": "170px", "o": 2}, "photo": {"type": "file", "fType": "inviteMainPhoto", "label": "\u0412\u0430\u0448\u0435 \u0444\u043e\u0442\u043e \u0438\u043b\u0438 \u0432\u0438\u0434\u0435\u043e", "data": [{"type": "inviteMainPhoto", "index": "wm-8p76BkHh3En7", "origTitle": "IMG_9802.jpeg", "keyS3": "usersFiles/inviteMainPhoto/40753_wm-8p76BkHh3En7.jpeg", "mimeType": "image/jpeg"}], "filter": 1, "o": 3}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "LStory", "blocks": {"title": {"type": "input", "label": "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u0418\u0441\u0442\u043e\u0440\u0438\u044f \u043d\u0430\u0448\u0435\u0439 \u043b\u044e\u0431\u0432\u0438", "o": 1}, "text": {"type": "textarea", "label": "\u0422\u0435\u043a\u0441\u0442", "data": "\u041c\u044b \u0432\u043e\u0441\u0441\u043e\u0435\u0434\u0438\u043d\u044f\u0435\u043c \u043d\u0430\u0448\u0438 \u0441\u0443\u0434\u044c\u0431\u044b \u0432 \u0434\u0435\u043d\u044c, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0443\u0436\u0435 \u0431\u044b\u043b \u043d\u0430\u0447\u0430\u043b\u043e\u043c \u0432\u0441\u0435\u0433\u043e, - \u0441\u0435\u043c\u044c \u043b\u0435\u0442 \u043d\u0430\u0437\u0430\u0434 \u044d\u0442\u043e\u0442 \u0434\u0435\u043d\u044c \u043f\u043e\u0434\u0430\u0440\u0438\u043b \u043d\u0430\u043c \u0438\u0441\u0442\u043e\u0440\u0438\u044e, \u0430 \u0442\u0435\u043f\u0435\u0440\u044c \u043c\u044b \u0434\u0430\u0440\u0438\u043c \u0435\u043c\u0443 \u0432\u0435\u0447\u043d\u043e\u0441\u0442\u044c. \n\n\u0421 \u043a\u0430\u0436\u0434\u044b\u043c \u0433\u043e\u0434\u043e\u043c \u043d\u0430\u0448\u0430 \u043b\u044e\u0431\u043e\u0432\u044c \u0441\u0442\u0430\u043d\u043e\u0432\u0438\u043b\u0430\u0441\u044c \u0432\u0441\u0451 \u0441\u0438\u043b\u044c\u043d\u0435\u0435, \u0438 \u0442\u0435\u043f\u0435\u0440\u044c \u043c\u044b \u0433\u043e\u0442\u043e\u0432\u044b \u0441\u0434\u0435\u043b\u0430\u0442\u044c \u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u0448\u0430\u0433. \u041c\u044b \u0441\u0447\u0430\u0441\u0442\u043b\u0438\u0432\u044b \u0440\u0430\u0437\u0434\u0435\u043b\u0438\u0442\u044c \u044d\u0442\u043e\u0442 \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u044b\u0439 \u043c\u043e\u043c\u0435\u043d\u0442 \u0441 \u0432\u0430\u043c\u0438 \u0438 \u043d\u0430\u0434\u0435\u0435\u043c\u0441\u044f, \u0447\u0442\u043e \u0432\u044b \u0441\u0442\u0430\u043d\u0435\u0442\u0435 \u0447\u0430\u0441\u0442\u044c\u044e \u043d\u0430\u0448\u0435\u0439 \u0434\u0430\u043b\u044c\u043d\u0435\u0439\u0448\u0435\u0439 \u0438\u0441\u0442\u043e\u0440\u0438\u0438.", "size": "sm", "h": "200px", "o": 2}, "photoOpacity": {"type": "slider", "label": "\u041f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u043e\u0441\u0442\u044c \u0444\u043e\u0442\u043e", "data": 0, "min": 0, "max": 1, "step": 0.01, "o": 3}, "photo": {"type": "file", "fType": "invitePhoto", "label": "\u0412\u0430\u0448\u0430 \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u044f", "data": [{"type": "invitePhoto", "index": "EJ5p0KrBGUH2qFa", "origTitle": "IMG_9803.png", "keyS3": "usersFiles/invitePhoto/40753_EJ5p0KrBGUH2qFa.png", "mimeType": "image/png"}], "o": 4}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "Calendar", "blocks": {"title": {"type": "input", "label": "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u0414\u0430\u0442\u0430", "o": 1}, "titleSpan": {"type": "input", "label": "\u041f\u043e\u0434\u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u043f\u0440\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u044f \u0441\u0432\u0430\u0434\u044c\u0431\u044b", "o": 2}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "sp": 3, "id": "Place", "blocks": {"title": {"type": "input", "label": "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u041c\u0435\u0441\u0442\u043e", "o": 1}, "titleSpan": {"type": "input", "label": "\u041f\u043e\u0434\u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u043f\u0440\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u044f", "o": 2}, "text": {"type": "textarea", "label": "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435", "data": "\u0414\u043b\u044f \u0432\u0430\u0448\u0435\u0433\u043e \u0443\u0434\u043e\u0431\u0441\u0442\u0432\u0430 \u043c\u044b \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u0438\u043b\u0438 \u043a\u0430\u0440\u0442\u0443. \u041d\u0430\u0434\u0435\u0435\u043c\u0441\u044f, \u0447\u0442\u043e \u0432\u044b \u043b\u0435\u0433\u043a\u043e \u043d\u0430\u0439\u0434\u0435\u0442\u0435 \u043c\u0435\u0441\u0442\u043e \u043f\u0440\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u044f \u0441\u0432\u0430\u0434\u044c\u0431\u044b \u0438 \u043f\u043e\u0440\u0430\u0434\u0443\u0435\u0442\u0435 \u043d\u0430\u0441 \u0441\u0432\u043e\u0438\u043c \u043f\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435\u043c!", "size": "sm", "h": "100px", "o": 3}, "time": {"type": "input", "label": "\u0412\u0440\u0435\u043c\u044f", "data": "14:00", "o": 4}, "address": {"type": "input", "label": "\u0410\u0434\u0440\u0435\u0441", "data": "\u0443\u043b. \u041a\u0430\u0440\u043b\u0430 \u041c\u0430\u0440\u043a\u0441\u0430, 23, \u041a\u0438\u0440\u043e\u0432, \u041a\u0438\u0440\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.,", "o": 5}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "Map", "ndb": "\u0421\u0432\u044f\u0437\u0430\u043d \u0441 \"\u041c\u0435\u0441\u0442\u043e\u043c \u043f\u0440\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u044f\"", "blocks": {"map": {"type": "map", "data": {"t": "Y", "d": {"coords": "58.6137, 49.6662", "address": "\u0443\u043b. \u041a\u0430\u0440\u043b\u0430 \u041c\u0430\u0440\u043a\u0441\u0430, 23, \u041a\u0438\u0440\u043e\u0432, \u041a\u0438\u0440\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b.,", "scale": 11, "filter": 1}}}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "DayProgram", "blocks": {"DP": {"type": "DP", "inp": false, "data": {"events": [{"id": 2, "time": "14:00", "name": "\u0426\u0435\u0440\u0435\u043c\u043e\u043d\u0438\u044f", "title": " \u0422\u043e\u0440\u0436\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0430\u044f \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f ", "desc": "\u041d\u0430 \u0432\u0441\u044f\u043a\u0438\u0439 \u0441\u043b\u0443\u0447\u0430\u0439 \u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u044c\u0442\u0435 \u043f\u043b\u0430\u0442\u043e\u0447\u043a\u0438 \u0434\u043b\u044f \u0442\u0440\u043e\u0433\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0433\u043e \u043c\u043e\u043c\u0435\u043d\u0442\u0430"}, {"id": 4, "time": "16:00", "name": "\u0411\u0430\u043d\u043a\u0435\u0442", "title": "\u0424\u0443\u0440\u0448\u0435\u0442 ", "desc": "\u041e\u043a\u0442\u044f\u0431\u0440\u044c\u0441\u043a\u0438\u0439 \u043f\u0440., 49", "isCustomEvent": true}, {"id": "6jtXsTK", "time": "17:00", "name": "\u0421\u0432\u043e\u0435 \u0441\u043e\u0431\u044b\u0442\u0438\u0435", "title": "\u0411\u0430\u043d\u043a\u0435\u0442", "desc": "\u0412\u0440\u0435\u043c\u044f \u0432\u043a\u0443\u0441\u043d\u043e\u0439 \u0435\u0434\u044b, \u0442\u0430\u043d\u0446\u0435\u0432 \u0438 \u0440\u0430\u0437\u0432\u043b\u0435\u0447\u0435\u043d\u0438\u0439", "isCustomEvent": true}, {"id": 8, "time": "21:30", "name": "\u0422\u043e\u0440\u0442", "title": "\u0421\u0432\u0430\u0434\u0435\u0431\u043d\u044b\u0439 \u0442\u043e\u0440\u0442", "desc": "\u0421\u043b\u0430\u0434\u043a\u0430\u044f \u0442\u0440\u0430\u0434\u0438\u0446\u0438\u044f, \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u043c\u044b \u043d\u0435 \u043c\u043e\u0436\u0435\u043c \u043e\u0431\u043e\u0439\u0442\u0438 \u0441\u0442\u043e\u0440\u043e\u043d\u043e\u0439"}, {"id": 9, "time": "22:30", "name": "\u0424\u0430\u0435\u0440-\u0448\u043e\u0443", "title": "\u0411\u0435\u043d\u0433\u0430\u043b\u044c\u0441\u043a\u0438\u0439 \u0444\u043b\u0435\u0448\u043c\u043e\u0431 ", "desc": "\u042f\u0440\u043a\u043e\u0435 \u0438 \u043a\u0440\u0430\u0441\u043e\u0447\u043d\u043e\u0435 \u0448\u043e\u0443, \u043a\u043e\u0442\u043e\u0440\u043e\u0435 \u043f\u0440\u0438\u0434\u0430\u0451\u0442 \u043e\u0441\u043e\u0431\u0443\u044e \u0430\u0442\u043c\u043e\u0441\u0444\u0435\u0440\u0443 \u043f\u0440\u0430\u0437\u0434\u043d\u0438\u043a\u0443"}, {"id": 11, "time": "23:00", "name": "\u0424\u0438\u043d\u0430\u043b", "title": "\u041e\u043a\u043e\u043d\u0447\u0430\u043d\u0438\u0435 \u0432\u0435\u0447\u0435\u0440\u0430", "desc": "\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u0434\u0430\u0436\u0435 \u0442\u0430\u043a\u043e\u0439 \u043f\u0440\u0435\u043a\u0440\u0430\u0441\u043d\u044b\u0439 \u0432\u0435\u0447\u0435\u0440 \u043c\u043e\u0436\u0435\u0442 \u0437\u0430\u043a\u043e\u043d\u0447\u0438\u0442\u044c\u0441\u044f"}]}}, "title": {"type": "input", "label": "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u041a\u0430\u043a \u043f\u0440\u043e\u0439\u0434\u0451\u0442", "btn": 3, "o": 1}, "titleSpan": {"type": "input", "label": "\u041f\u043e\u0434\u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u043d\u0430\u0448 \u0434\u0435\u043d\u044c", "btn": 3, "o": 2}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "DressCode", "blocks": {"title": {"type": "input", "label": "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u0414\u0440\u0435\u0441\u0441-\u043a\u043e\u0434", "btn": 3, "o": 1}, "cTitle": {"type": "input", "label": "\u041f\u043e\u0434\u043f\u0438\u0441\u044c \u0446\u0432\u0435\u0442\u043e\u0432", "data": "", "btn": 3, "o": 2}, "DS": {"type": "DS", "maxI": 10, "data": {"items": [{"id": "1", "t": "color", "v": "#000000"}, {"id": "2", "t": "color", "v": "#483a2d"}, {"id": "3", "t": "color", "v": "#725843"}, {"id": "4", "t": "color", "v": "#d8cdb0"}, {"id": "fM40JbE", "t": "color", "v": "#f3decf"}, {"id": "PEJIRxk", "t": "color", "v": "#8a987f"}, {"id": "GSOoSpP", "t": "color", "v": "#56604a"}]}}, "text": {"type": "textarea", "label": "\u0422\u0435\u043a\u0441\u0442", "data": "\u0412 \u044d\u0442\u043e\u0442 \u0434\u0435\u043d\u044c \u0431\u0443\u0434\u0435\u0442 \u043c\u043d\u043e\u0433\u043e \u043a\u0440\u0430\u0441\u043e\u0442\u044b, \u0438 \u0432\u044b \u2013 \u0435\u0451 \u0432\u0430\u0436\u043d\u0430\u044f \u0447\u0430\u0441\u0442\u044c.\n\u0415\u0441\u043b\u0438 \u0432\u0430\u043c \u043d\u0435 \u0441\u043b\u043e\u0436\u043d\u043e, \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0442\u0435 \u043d\u0430\u0448\u0443 \u0446\u0432\u0435\u0442\u043e\u0432\u0443\u044e \u043f\u0430\u043b\u0438\u0442\u0440\u0443 \u2013 \u044d\u0442\u043e \u0441\u0434\u0435\u043b\u0430\u0435\u0442 \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0438 \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u0430\u0442\u043c\u043e\u0441\u0444\u0435\u0440\u043d\u044b\u043c\u0438 \u0438 \u0446\u0435\u043b\u044c\u043d\u044b\u043c\u0438.", "size": "sm", "h": "140px", "btn": 3, "o": 3}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "Wishes", "blocks": {"WS": {"type": "WS", "inp": false, "data": {"wishes": [{"id": "1", "text": "\u0415\u0441\u043b\u0438 \u0432\u044b \u0437\u0430\u0434\u0443\u043c\u0430\u043b\u0438\u0441\u044c \u043e \u043f\u043e\u0434\u0430\u0440\u043a\u0435 \u2013 \u0441\u0430\u043c\u044b\u043c \u043f\u0440\u0438\u044f\u0442\u043d\u044b\u043c \u0434\u043b\u044f \u043d\u0430\u0441 \u0431\u0443\u0434\u0435\u0442 \u00ab\u0431\u0443\u043a\u0435\u0442\u00bb \u0432 \u043a\u043e\u043d\u0432\u0435\u0440\u0442\u0435. \u0422\u0430\u043a\u043e\u0439 \u043f\u043e\u0434\u0430\u0440\u043e\u043a \u0442\u043e\u0447\u043d\u043e \u043d\u0435 \u0437\u0430\u0432\u044f\u043d\u0435\u0442 \u0438 \u043f\u043e\u043c\u043e\u0436\u0435\u0442 \u0432\u043e\u043f\u043b\u043e\u0442\u0438\u0442\u044c \u043d\u0430\u0448\u0438 \u043c\u0435\u0447\u0442\u044b \u0432 \u0436\u0438\u0437\u043d\u044c."}, {"id": "2", "text": "\u0424\u043e\u0440\u043c\u0430\u0442 \u043d\u0430\u0448\u0435\u0433\u043e \u0442\u043e\u0440\u0436\u0435\u0441\u0442\u0432\u0430 \u043d\u0435 \u043f\u0440\u0435\u0434\u043f\u043e\u043b\u0430\u0433\u0430\u0435\u0442 \u0434\u0435\u0442\u0441\u043a\u043e\u0439 \u0437\u043e\u043d\u044b, \u0438 \u043c\u044b \u0445\u043e\u0442\u0438\u043c, \u0447\u0442\u043e\u0431\u044b \u043a\u0430\u0436\u0434\u044b\u0439 \u043c\u043e\u0433 \u0441\u043f\u043e\u043a\u043e\u0439\u043d\u043e \u043e\u0442\u0434\u043e\u0445\u043d\u0443\u0442\u044c \u0438 \u043f\u043e\u0432\u0435\u0441\u0435\u043b\u0438\u0442\u044c\u0441\u044f. \u041f\u043e\u044d\u0442\u043e\u043c\u0443 \u0431\u0443\u0434\u0435\u043c \u043f\u0440\u0438\u0437\u043d\u0430\u0442\u0435\u043b\u044c\u043d\u044b, \u0435\u0441\u043b\u0438 \u043c\u0430\u043c\u044b \u0438 \u043f\u0430\u043f\u044b \u043e\u0441\u0442\u0430\u0432\u044f\u0442 \u0434\u0435\u0442\u043e\u043a \u0434\u043e\u043c\u0430 \u0432 \u043d\u0430\u0434\u0451\u0436\u043d\u044b\u0445 \u0440\u0443\u043a\u0430\u0445."}, {"id": "3", "text": "\u0426\u0432\u0435\u0442\u044b \u2013 \u044d\u0442\u043e \u043f\u0440\u0435\u043a\u0440\u0430\u0441\u043d\u043e, \u043d\u043e, \u0447\u0442\u043e\u0431\u044b \u043d\u0435 \u043f\u0435\u0440\u0435\u0436\u0438\u0432\u0430\u0442\u044c \u0437\u0430 \u0438\u0445 \u0441\u0443\u0434\u044c\u0431\u0443 \u043f\u043e\u0441\u043b\u0435 \u043f\u0440\u0430\u0437\u0434\u043d\u0438\u043a\u0430, \u043c\u044b \u0431\u0443\u0434\u0435\u043c \u0440\u0430\u0434\u044b, \u0435\u0441\u043b\u0438 \u0432\u043c\u0435\u0441\u0442\u043e \u0431\u0443\u043a\u0435\u0442\u0430 \u0432\u044b \u043f\u043e\u0434\u0430\u0440\u0438\u0442\u0435 \u0431\u0443\u0442\u044b\u043b\u043e\u0447\u043a\u0443 \u0432\u0430\u0448\u0435\u0433\u043e \u043b\u044e\u0431\u0438\u043c\u043e\u0433\u043e \u043d\u0430\u043f\u0438\u0442\u043a\u0430. \u042d\u0442\u043e \u0434\u043e\u0431\u0430\u0432\u0438\u0442 \u0435\u0449\u0451 \u0431\u043e\u043b\u044c\u0448\u0435 \u0442\u0435\u043f\u043b\u0430 \u043d\u0430\u0448\u0435\u043c\u0443 \u0432\u0435\u0447\u0435\u0440\u0443!"}, {"id": "4", "text": "\u041c\u044b \u0437\u043d\u0430\u0435\u043c, \u043a\u0430\u043a \u0441\u0438\u043b\u044c\u043d\u043e \u044d\u043c\u043e\u0446\u0438\u0438 \u043f\u0435\u0440\u0435\u043f\u043e\u043b\u043d\u044f\u044e\u0442 \u0432 \u044d\u0442\u043e\u0442 \u0434\u0435\u043d\u044c, \u043d\u043e \u043f\u0440\u043e\u0441\u0438\u043c \u0432\u043e\u0437\u0434\u0435\u0440\u0436\u0430\u0442\u044c\u0441\u044f \u043e\u0442 \u043a\u0440\u0438\u043a\u043e\u0432 \u00ab\u0433\u043e\u0440\u044c\u043a\u043e\u00bb, \u0432\u0435\u0434\u044c \u043f\u043e\u0446\u0435\u043b\u0443\u0439 \u2013 \u044d\u0442\u043e \u0438\u0441\u043a\u0440\u0435\u043d\u043d\u0438\u0439 \u0437\u043d\u0430\u043a \u0447\u0443\u0432\u0441\u0442\u0432, \u043e\u043d \u043d\u0435 \u0431\u044b\u0432\u0430\u0435\u0442 \u043f\u043e \u0437\u0430\u043a\u0430\u0437\u0443. \u0415\u0441\u043b\u0438 \u043a\u0442\u043e-\u0442\u043e \u043d\u0435 \u0441\u0434\u0435\u0440\u0436\u0438\u0442\u0441\u044f, \u0431\u0443\u0434\u044c\u0442\u0435 \u0433\u043e\u0442\u043e\u0432\u044b \u043f\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u043d\u0430\u0448 \u0441\u0435\u043c\u0435\u0439\u043d\u044b\u0439 \u0431\u044e\u0434\u0436\u0435\u0442 \u0448\u0442\u0440\u0430\u0444\u043e\u043c \u0432 \u0440\u0430\u0437\u043c\u0435\u0440\u0435 1000 \u0440\u0443\u0431\u043b\u0435\u0439. \ud83d\ude0a"}]}}, "title": {"type": "input", "label": "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u041d\u0430\u0448\u0438", "btn": 3, "o": 1}, "titleSpan": {"type": "input", "label": "\u041f\u043e\u0434\u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u0442\u0451\u043f\u043b\u044b\u0435 \u043f\u043e\u0436\u0435\u043b\u0430\u043d\u0438\u044f", "btn": 3, "o": 2}, "sign": {"type": "textarea", "label": "\u041f\u043e\u0434\u043f\u0438\u0441\u044c", "data": "\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043f\u043e\u043d\u0438\u043c\u0430\u043d\u0438\u0435 \u0438 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0443! \u0412\u0430\u0448\u0435 \u043f\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435 \u2013 \u043b\u0443\u0447\u0448\u0438\u0439 \u043f\u043e\u0434\u0430\u0440\u043e\u043a \u0434\u043b\u044f \u043d\u0430\u0441", "size": "sm", "h": "50px", "btn": 3, "o": 3}}}, {"title": "CEDT", "variant": "v1", "isOn": false, "id": "Timer", "blocks": {"caption": {"type": "input", "label": "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a \u0441\u0432\u0435\u0440\u0445\u0443", "data": "\u0421\u043e\u0432\u0441\u0435\u043c \u0441\u043a\u043e\u0440\u043e", "o": 1}, "headingSpan": {"type": "input", "label": "\u041f\u043e\u0434\u043f\u0438\u0441\u044c \u0441\u043d\u0438\u0437\u0443", "data": "\u0434\u043e \u0434\u043d\u044f", "o": 2}, "heading": {"type": "input", "label": "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a \u0441\u043d\u0438\u0437\u0443", "data": "\u041d\u0430\u0448\u0435\u0439 \u0441\u0432\u0430\u0434\u044c\u0431\u044b", "o": 3}, "date": {"type": "date", "data": {"utc": 0}, "o": 4}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "Quiz", "blocks": {"title": {"type": "input", "label": "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u0412\u043e\u043f\u0440\u043e\u0441\u044b", "btn": 3, "o": 1}, "titleSpan": {"type": "input", "label": "\u041f\u043e\u0434\u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u0434\u043b\u044f \u0433\u043e\u0441\u0442\u0435\u0439", "btn": 3, "o": 2}, "quiz": {"type": "quiz", "data": {"questions": [{"type": "input", "isReq": true, "question": "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0412\u0430\u0448\u0435 \u0438\u043c\u044f \u0438 \u0444\u0430\u043c\u0438\u043b\u0438\u044e", "isGuestName": true, "isHidePersonal": true}, {"type": "radio", "isReq": true, "soi": "\u042f \u0441 \u0443\u0434\u043e\u0432\u043e\u043b\u044c\u0441\u0442\u0432\u0438\u0435\u043c \u043f\u0440\u0438\u0434\u0443", "answers": ["\u042f \u0441 \u0443\u0434\u043e\u0432\u043e\u043b\u044c\u0441\u0442\u0432\u0438\u0435\u043c \u043f\u0440\u0438\u0434\u0443", "\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u043d\u0435 \u0441\u043c\u043e\u0433\u0443 \u043f\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u043e\u0432\u0430\u0442\u044c"], "question": "\u041f\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435"}, {"type": "checkbox", "isReq": false, "max": 5, "answers": ["\u0428\u0430\u043c\u043f\u0430\u043d\u0441\u043a\u043e\u0435", "\u041a\u0440\u0430\u0441\u043d\u043e\u0435 \u0441\u0443\u0445\u043e\u0435 \u0432\u0438\u043d\u043e", "\u041a\u0440\u0430\u0441\u043d\u043e\u0435 \u043f\u043e\u043b\u0443\u0441\u043b\u0430\u0434\u043a\u043e\u0435 \u0432\u0438\u043d\u043e", "\u0411\u0435\u043b\u043e\u0435 \u043f\u043e\u043b\u0443\u0441\u043b\u0430\u0434\u043a\u043e\u0435 \u0432\u0438\u043d\u043e", "\u0411\u0435\u043b\u043e\u0435 \u0441\u0443\u0445\u043e\u0435 \u0432\u0438\u043d\u043e", "\u0412\u0438\u0441\u043a\u0438", "\u041a\u043e\u043d\u044c\u044f\u043a", "\u0412\u043e\u0434\u043a\u0430", "\u0420\u043e\u043c", "\u0414\u0436\u0438\u043d", "\u0422\u0435\u043a\u0438\u043b\u0430", "\u0411\u0435\u0437\u0430\u043b\u043a\u043e\u0433\u043e\u043b\u044c\u043d\u044b\u0435 \u043d\u0430\u043f\u0438\u0442\u043a\u0438"], "question": "\u041c\u044b \u0445\u043e\u0442\u0438\u043c, \u0447\u0442\u043e\u0431\u044b \u0441\u0432\u0430\u0434\u044c\u0431\u0430 \u043f\u0440\u043e\u0448\u043b\u0430 \u0432\u0435\u0441\u0435\u043b\u043e, \u043f\u043e\u044d\u0442\u043e\u043c\u0443 \u043f\u0440\u043e\u0441\u0438\u043c \u0412\u0430\u0441 \u0432\u044b\u0431\u0440\u0430\u0442\u044c \u0430\u043b\u043a\u043e\u0433\u043e\u043b\u044c, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0412\u044b \u043f\u0440\u0435\u0434\u043f\u043e\u0447\u0438\u0442\u0430\u0435\u0442\u0435:"}, {"type": "checkbox", "isReq": false, "answers": ["\u041c\u044f\u0441\u043e", "\u0420\u044b\u0431\u0430"], "question": "\u0422\u0430\u043a \u0436\u0435 \u0443\u0442\u043e\u0447\u043d\u0438\u0442\u0435 \u0412\u0430\u0448\u0438 \u043f\u0440\u0435\u0434\u043f\u043e\u0447\u0442\u0435\u043d\u0438\u044f \u0432 \u0433\u043e\u0440\u044f\u0447\u0438\u0445 \u0431\u043b\u044e\u0434\u0430\u0445:"}, {"type": "input", "isReq": false, "question": "\u041c\u0443\u0437\u044b\u043a\u0430\u043b\u044c\u043d\u044b\u0435 \u043a\u043e\u043c\u043f\u043e\u0437\u0438\u0446\u0438\u0438, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0445\u043e\u0442\u0435\u043b\u0438 \u0431\u044b \u0443\u0441\u043b\u044b\u0448\u0430\u0442\u044c \u043d\u0430 \u043f\u0440\u0430\u0437\u0434\u043d\u0438\u043a\u0435"}]}}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "Contacts", "blocks": {"cts": {"type": "CT", "inp": false, "maxC": 5, "maxL": 5, "data": {"cts": [{"id": "1", "name": "\u041f\u043e\u043b\u0438\u043d\u0430", "role": "\u041d\u0435\u0432\u0435\u0441\u0442\u0430", "photo": [], "links": [{"t": "Phone", "d": "+7 (953) 132-76-78"}]}, {"id": "2", "name": "\u0414\u0435\u043d\u0438\u0441", "role": "\u0416\u0435\u043d\u0438\u0445", "photo": [], "links": [{"t": "Phone", "d": "+7 (912) 331-94-61"}]}]}}, "title": {"type": "input", "label": "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b", "btn": 3, "o": 1}, "titleSpan": {"type": "input", "label": "\u041f\u043e\u0434\u0437\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u0434\u043b\u044f \u0441\u0432\u044f\u0437\u0438", "btn": 3, "o": 2}}}, {"title": "CEDT", "variant": "v1", "isOn": false, "id": "Group", "blocks": {"title": {"type": "input", "label": "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u041e\u0431\u0449\u0430\u044f \u0433\u0440\u0443\u043f\u043f\u0430", "o": 1}, "link": {"type": "input", "label": "\u0421\u0441\u044b\u043b\u043a\u0430", "data": "https://t.me/test", "o": 2}, "name": {"type": "input", "label": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043a\u043d\u043e\u043f\u043a\u0438", "data": "\u0412\u0441\u0442\u0443\u043f\u0438\u0442\u044c \u0432 \u0433\u0440\u0443\u043f\u043f\u0443", "o": 3}, "text": {"type": "textarea", "label": "\u0422\u0435\u043a\u0441\u0442", "data": "\u0414\u043e\u0440\u043e\u0433\u0438\u0435 \u0434\u0440\u0443\u0437\u044c\u044f! \u041c\u044b \u0441\u043e\u0437\u0434\u0430\u043b\u0438 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u0443\u044e \u0433\u0440\u0443\u043f\u043f\u0443, \u0433\u0434\u0435 \u043c\u043e\u0436\u043d\u043e \u0443\u0437\u043d\u0430\u0442\u044c \u0432\u0441\u0435 \u0432\u0430\u0436\u043d\u044b\u0435 \u0434\u0435\u0442\u0430\u043b\u0438 \u043f\u0440\u0430\u0437\u0434\u043d\u0438\u043a\u0430, \u043f\u043e\u0434\u0435\u043b\u0438\u0442\u044c\u0441\u044f \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u044f\u043c\u0438 \u0438 \u0432\u0438\u0434\u0435\u043e, \u0430 \u0442\u0430\u043a\u0436\u0435 \u043f\u0440\u043e\u0441\u0442\u043e \u043f\u043e\u043e\u0431\u0449\u0430\u0442\u044c\u0441\u044f.", "size": "sm", "h": "130px", "o": 4}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "Final", "blocks": {"title": {"type": "textarea", "label": "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a", "data": "\u0411\u0443\u0434\u0435\u043c \u0440\u0430\u0434\u044b \u0432\u0438\u0434\u0435\u0442\u044c \u0412\u0430\u0441 \u043d\u0430 \u043d\u0430\u0448\u0435\u043c \u043f\u0440\u0430\u0437\u0434\u043d\u0438\u043a\u0435!", "size": "sm", "h": "80px", "o": 1}, "photos": {"type": "file", "fType": "invitePhoto2x", "label": "\u0412\u0430\u0448\u0435 \u0444\u043e\u0442\u043e", "data": [{"type": "invitePhoto2x", "index": "Nv1jFMJuxThljgC", "origTitle": "IMG_9804.png", "keyS3": "usersFiles/invitePhoto2x/40753_Nv1jFMJuxThljgC.png", "mimeType": "image/png", "filter": 1}], "filter": 1, "o": 2, "mb": "2px"}, "t": {"type": "text", "data": 5, "o": 3}}}], "url": "47346WmjuON1HvoGFe850", "settings": null, "published": true, "purchased": true, "kind": "design", "variant": "v12", "domain": null, "shareResults": null, "revision": 55, "guest": null, "customFonts": [], "darkModeWarning": false}};
+    const mockedApiData = {"error": false, "data": {"notFound": false, "uid": "qygsjdtppqkpk1t0u4ioe850", "type": "wedding", "data": {"UTC": 1795597216214, "timezone": "Europe/Moscow", "locale": "ru", "place": "ЗАГС", "address": "г. Киров, ул.Карла Маркса, 23", "man": "Денис", "woman": "Полина"}, "blocks": [{"title": "CEDT", "variant": "v1", "isOn": false, "id": "Music", "blocks": {"music": {"type": "music", "data": {"v": "1", "n": false}}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "ndb": true, "id": "Main", "blocks": {"oneName": {"type": "input", "label": "Первое имя", "data": "Денис", "o": 1}, "twoName": {"type": "input", "label": "Второе имя", "data": "Полина", "o": 2}, "subtitle": {"type": "input", "label": "Подзаголовок", "data": "Свадебное Приглашение", "o": 3}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "Intro", "blocks": {"title": {"type": "textarea", "label": "Заголовок", "data": "Дорогие\nНАШИ ГОСТИ", "size": "sm", "h": "80px", "o": 1}, "text": {"type": "textarea", "label": "Текст", "data": "Если вы читаете это приглашение – значит, вы часть нашей истории.\nСпасибо, что были с нами всё это время – рядом, мысленно, в воспоминаниях.\nМы с радостью приглашаем вас стать частью нового воспоминания – нашей свадьбы.", "size": "sm", "h": "170px", "o": 2}, "photo": {"type": "file", "fType": "inviteMainPhoto", "label": "Ваше фото или видео", "data": [{"type": "inviteMainPhoto", "index": "wm-8p76BkHh3En7", "origTitle": "IMG_9802.jpeg", "keyS3": "usersFiles/inviteMainPhoto/40753_wm-8p76BkHh3En7.jpeg", "mimeType": "image/jpeg"}], "filter": 1, "o": 3}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "LStory", "blocks": {"title": {"type": "input", "label": "Заголовок", "data": "История нашей любви", "o": 1}, "text": {"type": "textarea", "label": "Текст", "data": "Мы воссоединяем наши судьбы в день, который уже был началом всего, - семь лет назад этот день подарил нам историю, а теперь мы дарим ему вечность. \n\nС каждым годом наша любовь становилась всё сильнее, и теперь мы готовы сделать следующий шаг. Мы счастливы разделить этот особенный момент с вами и надеемся, что вы станете частью нашей дальнейшей истории.", "size": "sm", "h": "200px", "o": 2}, "photoOpacity": {"type": "slider", "label": "Прозрачность фото", "data": 0, "min": 0, "max": 1, "step": 0.01, "o": 3}, "photo": {"type": "file", "fType": "invitePhoto", "label": "Ваша фотография", "data": [{"type": "invitePhoto", "index": "EJ5p0KrBGUH2qFa", "origTitle": "IMG_9803.png", "keyS3": "usersFiles/invitePhoto/40753_EJ5p0KrBGUH2qFa.png", "mimeType": "image/png"}], "o": 4}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "Calendar", "blocks": {"title": {"type": "input", "label": "Заголовок", "data": "Дата", "o": 1}, "titleSpan": {"type": "input", "label": "Подзаголовок", "data": "проведения свадьбы", "o": 2}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "sp": 3, "id": "Place", "blocks": {"title": {"type": "input", "label": "Заголовок", "data": "Место", "o": 1}, "titleSpan": {"type": "input", "label": "Подзаголовок", "data": "проведения", "o": 2}, "text": {"type": "textarea", "label": "Описание", "data": "Для вашего удобства мы подготовили карту. Надеемся, что вы легко найдете место проведения свадьбы и порадуете нас своим присутствием!", "size": "sm", "h": "100px", "o": 3}, "time": {"type": "input", "label": "Время", "data": "14:00", "o": 4}, "address": {"type": "input", "label": "Адрес", "data": "ул. Карла Маркса, 23, Киров, Кировская обл.,", "o": 5}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "Map", "ndb": "Связан с \"Местом проведения\"", "blocks": {"map": {"type": "map", "data": {"t": "Y", "d": {"coords": "58.6137, 49.6662", "address": "ул. Карла Маркса, 23, Киров, Кировская обл.,", "scale": 11, "filter": 1}}}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "DayProgram", "blocks": {"DP": {"type": "DP", "inp": false, "data": {"events": [{"id": 2, "time": "14:00", "name": "Церемония", "title": "Торжественная регистрация", "desc": "На всякий случай приготовьте платочки для трогательного момента"}, {"id": 4, "time": "15:30", "name": "Банкет", "title": "Фуршет", "desc": "Профсоюзная 1, 1 этаж\nКафе «Кристалл»", "isCustomEvent": true}, {"id": "6jtXsTK", "time": "16:00", "name": "Свое событие", "title": "Банкет", "desc": "Время вкусной еды, тостов, танцев и развлечений", "isCustomEvent": true}, {"id": 8, "time": "20:15", "name": "Торт", "title": "Свадебный торт", "desc": "Сладкая традиция, которую мы не можем обойти стороной"}, {"id": 9, "time": "20:30", "name": "Фаер-шоу", "title": "Бенгальский флешмоб", "desc": "Яркое и красочное шоу, которое придаёт особую\nатмосферу празднику"}]}}, "title": {"type": "input", "label": "Заголовок", "data": "Как пройдёт", "btn": 3, "o": 1}, "titleSpan": {"type": "input", "label": "Подзаголовок", "data": "наш день", "btn": 3, "o": 2}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "DressCode", "blocks": {"title": {"type": "input", "label": "Заголовок", "data": "Дресс-код", "btn": 3, "o": 1}, "cTitle": {"type": "input", "label": "Подпись цветов", "data": "", "btn": 3, "o": 2}, "DS": {"type": "DS", "maxI": 10, "data": {"items": [{"id": "1", "t": "color", "v": "#000000"}, {"id": "2", "t": "color", "v": "#534638"}, {"id": "3", "t": "color", "v": "#725843"}, {"id": "4", "t": "color", "v": "#e2d7ba"}, {"id": "fM40JbE", "t": "color", "v": "#f0dece"}, {"id": "PEJIRxk", "t": "color", "v": "#8c987f"}, {"id": "GSOoSpP", "t": "color", "v": "#5a614c"}]}}, "text": {"type": "textarea", "label": "Текст", "data": "В этот день будет много красоты, и вы – её важная часть.\nЕсли вам не сложно, поддержите нашу цветовую палитру – это сделает фотографии особенно атмосферными и цельными.", "size": "sm", "h": "140px", "btn": 3, "o": 3}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "Wishes", "blocks": {"WS": {"type": "WS", "inp": false, "data": {"wishes": [{"id": "1", "text": "Если вы задумались о подарке – самым приятным для нас будет «букет» в конверте. Такой подарок точно не завянет и поможет воплотить наши мечты в жизнь."}, {"id": "2", "text": "Формат нашего торжества не предполагает детской зоны, и мы хотим, чтобы каждый мог спокойно отдохнуть и повеселиться. Поэтому будем признательны, если мамы и папы оставят деток дома в надёжных руках."}, {"id": "3", "text": "Цветы – это прекрасно, но, чтобы не переживать за их судьбу после праздника, мы будем рады, если вместо букета вы подарите бутылочку вашего любимого напитка. Это добавит ещё больше тепла нашему вечеру!"}, {"id": "4", "text": "Мы знаем, как сильно эмоции переполняют в этот день, но просим воздержаться от криков «горько», ведь поцелуй – это искренний знак чувств, он не бывает по заказу. Если кто-то не сдержится, будьте готовы пополнить наш семейный бюджет штрафом в размере 1000 рублей. 😊"}]}}, "title": {"type": "input", "label": "Заголовок", "data": "Наши", "btn": 3, "o": 1}, "titleSpan": {"type": "input", "label": "Подзаголовок", "data": "тёплые пожелания", "btn": 3, "o": 2}, "sign": {"type": "textarea", "label": "Подпись", "data": "Спасибо за понимание и поддержку! Ваше присутствие – лучший подарок для нас", "size": "sm", "h": "50px", "btn": 3, "o": 3}}}, {"title": "CEDT", "variant": "v1", "isOn": false, "id": "Timer", "blocks": {"caption": {"type": "input", "label": "Заголовок сверху", "data": "Совсем скоро", "o": 1}, "headingSpan": {"type": "input", "label": "Подпись снизу", "data": "до дня", "o": 2}, "heading": {"type": "input", "label": "Заголовок снизу", "data": "Нашей свадьбы", "o": 3}, "date": {"type": "date", "data": {"utc": 0}, "o": 4}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "Quiz", "blocks": {"title": {"type": "input", "label": "Заголовок", "data": "Вопросы", "btn": 3, "o": 1}, "titleSpan": {"type": "input", "label": "Подзаголовок", "data": "для гостей", "btn": 3, "o": 2}, "quiz": {"type": "quiz", "data": {"questions": [{"type": "input", "isReq": true, "question": "Введите Ваше имя и фамилию", "isGuestName": true, "isHidePersonal": true}, {"type": "radio", "isReq": true, "soi": "Я с удовольствием приду", "answers": ["Я с удовольствием приду", "К сожалению, не смогу присутствовать"], "question": "Присутствие"}, {"type": "checkbox", "isReq": false, "max": 5, "answers": ["Шампанское", "Красное сухое вино", "Красное полусладкое вино", "Белое полусладкое вино", "Белое сухое вино", "Виски", "Коньяк", "Водка", "Ром", "Джин", "Текила", "Безалкогольные напитки"], "question": "Мы хотим, чтобы свадьба прошла весело, поэтому просим Вас выбрать алкоголь, который Вы предпочитаете:"}, {"type": "checkbox", "isReq": false, "answers": ["Мясо", "Рыба"], "question": "Так же уточните Ваши предпочтения в горячих блюдах:"}, {"type": "input", "isReq": false, "question": "Музыкальные композиции, которые хотели бы услышать на празднике"}]}}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "Contacts", "blocks": {"cts": {"type": "CT", "inp": false, "maxC": 5, "maxL": 5, "data": {"cts": [{"id": "1", "name": "Полина", "role": "Невеста", "photo": [], "links": [{"t": "Phone", "d": "+7 (953) 132-76-78"}]}, {"id": "2", "name": "Денис", "role": "Жених", "photo": [], "links": [{"t": "Phone", "d": "+7 (912) 331-94-61"}]}]}}, "title": {"type": "input", "label": "Заголовок", "data": "Контакты", "btn": 3, "o": 1}, "titleSpan": {"type": "input", "label": "Подзаголовок", "data": "для связи", "btn": 3, "o": 2}}}, {"title": "CEDT", "variant": "v1", "isOn": false, "id": "Group", "blocks": {"title": {"type": "input", "label": "Заголовок", "data": "Общая группа", "o": 1}, "link": {"type": "input", "label": "Ссылка", "data": "https://t.me/test", "o": 2}, "name": {"type": "input", "label": "Название кнопки", "data": "Вступить в группу", "o": 3}, "text": {"type": "textarea", "label": "Текст", "data": "Дорогие друзья! Мы создали специальную группу, где можно узнать все важные детали праздника, поделиться фотографиями и видео, а также просто пообщаться.", "size": "sm", "h": "130px", "o": 4}}}, {"title": "CEDT", "variant": "v1", "isOn": true, "id": "Final", "blocks": {"title": {"type": "textarea", "label": "Заголовок", "data": "Будем рады видеть Вас на нашем празднике!", "size": "sm", "h": "80px", "o": 1}, "photos": {"type": "file", "fType": "invitePhoto2x", "label": "Ваше фото", "data": [{"type": "invitePhoto2x", "index": "Nv1jFMJuxThljgC", "origTitle": "IMG_9804.png", "keyS3": "usersFiles/invitePhoto2x/40753_Nv1jFMJuxThljgC.png", "mimeType": "image/png", "filter": 1}], "filter": 1, "o": 2, "mb": "2px"}, "t": {"type": "text", "data": 5, "o": 3}}}], "url": "47346WmjuON1HvoGFe850", "settings": null, "published": true, "purchased": true, "kind": "design", "variant": "v12", "domain": null, "shareResults": null, "revision": 55, "guest": null, "customFonts": [], "darkModeWarning": false}};
     // Inject CSS rule for the text block override and overscroll
     const style = document.createElement('style');
     style.innerHTML = `
@@ -122,9 +143,122 @@
       input[type="checkbox"]:checked {
         accent-color: #0c2610 !important;
       }
+
+/* Questionnaire: Dark Green (#0c2610) overrides */
+.questions {
+  --evx-field: #0c2610 !important;
+  --evx-panelText: #0c2610 !important;
+  --evx-onPanel: #0c2610 !important;
+}
+
+.questions,
+.questions * {
+  --evx-field: #0c2610 !important;
+  --evx-panelText: #0c2610 !important;
+  --evx-onPanel: #0c2610 !important;
+}
+
+.questions .questions__title,
+.questions .questions__title span,
+.questions .questions__label,
+.questions .questions__item,
+.questions .options__text,
+.questions .checkbox__text,
+.questions .questions__input,
+.questions label,
+.questions p,
+.questions span {
+  color: #0c2610 !important;
+  -webkit-text-fill-color: #0c2610 !important;
+}
+
+.questions .questions__input {
+  color: #0c2610 !important;
+  -webkit-text-fill-color: #0c2610 !important;
+  border: 1px solid rgba(12, 38, 16, 0.35) !important;
+}
+
+.questions .questions__input:focus {
+  border-color: #0c2610 !important;
+}
+
+.questions .questions__input::-webkit-input-placeholder {
+  color: rgba(12, 38, 16, 0.6) !important;
+  -webkit-text-fill-color: rgba(12, 38, 16, 0.6) !important;
+}
+.questions .questions__input::-moz-placeholder {
+  color: rgba(12, 38, 16, 0.6) !important;
+  -webkit-text-fill-color: rgba(12, 38, 16, 0.6) !important;
+}
+.questions .questions__input:-ms-input-placeholder {
+  color: rgba(12, 38, 16, 0.6) !important;
+  -webkit-text-fill-color: rgba(12, 38, 16, 0.6) !important;
+}
+.questions .questions__input::placeholder {
+  color: rgba(12, 38, 16, 0.6) !important;
+  -webkit-text-fill-color: rgba(12, 38, 16, 0.6) !important;
+}
+
+.questions .options__label:before {
+  border-color: rgba(12, 38, 16, 0.45) !important;
+}
+
+.questions .options__input:checked + .options__label:before {
+  border-color: #0c2610 !important;
+}
+
+.questions .options__input:checked + .options__label:after,
+.questions .options__label:after {
+  background-color: #0c2610 !important;
+}
+
+.questions .checkbox__label:before {
+  border-color: rgba(12, 38, 16, 0.45) !important;
+}
+
+.questions .checkbox__input:checked + .checkbox__label:before,
+.questions .checkbox__input:checked + .checkbox__label::before {
+  background-color: #0c2610 !important;
+  border-color: #0c2610 !important;
+}
+
+.questions .checkbox__input:checked + .checkbox__label:after,
+.questions .checkbox__input:checked + .checkbox__label::after {
+  background-color: #ffffff !important;
+}
+
+.questions input[type="radio"],
+.questions input[type="checkbox"] {
+  accent-color: #0c2610 !important;
+}
+
+.questions .questions__submit,
+.questions .questions__submit span {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
     `;
     
-    // Inject into body to ensure it overrides <head> Emotion styles
+    // Inject into body to ensure it overrides <head>
+<script>
+(function() {
+  var origDesc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
+  if (origDesc && origDesc.set) {
+    Object.defineProperty(HTMLScriptElement.prototype, 'src', {
+      set: function(val) {
+        if (typeof val === 'string' && val.indexOf('/_next/') !== -1 && val.indexOf('t=') === -1) {
+          val = val + (val.indexOf('?') !== -1 ? '&' : '?') + 't=' + Date.now();
+        }
+        return origDesc.set.call(this, val);
+      },
+      get: function() {
+        return origDesc.get.call(this);
+      }
+    });
+  }
+})();
+</script> Emotion styles
     const injectStyle = () => {
         if (document.body) {
             document.body.appendChild(style);
@@ -275,163 +409,163 @@
       href="/_next/static/chunks/webpack-7c3cda58df76be79.js"
     />
     <script
-      src="/_next/static/chunks/fd9d1056-9109f013d4670639.js"
+      src="/_next/static/chunks/fd9d1056-9109f013d4670639.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/7893-0938fbb6f8e39feb.js"
+      src="/_next/static/chunks/7893-0938fbb6f8e39feb.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/main-app-0f9dce24c4330380.js"
+      src="/_next/static/chunks/main-app-0f9dce24c4330380.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/f97e080b-15278cb7a98eb822.js"
+      src="/_next/static/chunks/f97e080b-15278cb7a98eb822.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/0e762574-5be16695d5602dd8.js"
+      src="/_next/static/chunks/0e762574-5be16695d5602dd8.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/479ba886-71dae2f9be07bcc1.js"
+      src="/_next/static/chunks/479ba886-71dae2f9be07bcc1.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/ee560e2c-a4cebb88258c6017.js"
+      src="/_next/static/chunks/ee560e2c-a4cebb88258c6017.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/9c4e2130-e1c08a5bea9bd51d.js"
+      src="/_next/static/chunks/9c4e2130-e1c08a5bea9bd51d.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/eec3d76d-9533b0bcb9739877.js"
+      src="/_next/static/chunks/eec3d76d-9533b0bcb9739877.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/8885-596585519b9db558.js"
+      src="/_next/static/chunks/8885-596585519b9db558.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/7336-628b1a64126cb343.js"
+      src="/_next/static/chunks/7336-628b1a64126cb343.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/865-5625168de96254be.js"
+      src="/_next/static/chunks/865-5625168de96254be.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/7204-5e1d731417c72d61.js"
+      src="/_next/static/chunks/7204-5e1d731417c72d61.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/140-55a765c4c01bb837.js"
+      src="/_next/static/chunks/140-55a765c4c01bb837.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/5184-b1bae0db862ed3e3.js"
+      src="/_next/static/chunks/5184-b1bae0db862ed3e3.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/app/(template)/layout-c28c89d7f272bec1.js"
+      src="/_next/static/chunks/app/(template)/layout-c28c89d7f272bec1.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/8232-1f2de4eb5ab5ce7a.js"
+      src="/_next/static/chunks/8232-1f2de4eb5ab5ce7a.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/1085-2a9bd2d08e6e5051.js"
+      src="/_next/static/chunks/1085-2a9bd2d08e6e5051.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/1273-7db7aaf120436a9b.js"
+      src="/_next/static/chunks/1273-7db7aaf120436a9b.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/376-c8096250d46f741c.js"
+      src="/_next/static/chunks/376-c8096250d46f741c.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/app/(client)/error-70f810e674e9496e.js"
+      src="/_next/static/chunks/app/(client)/error-70f810e674e9496e.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/app/error-1dbc2ddd9032154c.js"
+      src="/_next/static/chunks/app/error-1dbc2ddd9032154c.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/app/global-error-ae6cb3e3489afaad.js"
+      src="/_next/static/chunks/app/global-error-ae6cb3e3489afaad.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/fca4dd8b-52ae819e34c586a0.js"
+      src="/_next/static/chunks/fca4dd8b-52ae819e34c586a0.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/f8025e75-0abe939113487316.js"
+      src="/_next/static/chunks/f8025e75-0abe939113487316.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/f7333993-a1ea08a518d2153b.js"
+      src="/_next/static/chunks/f7333993-a1ea08a518d2153b.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/619edb50-2f68c5d2d39f73d8.js"
+      src="/_next/static/chunks/619edb50-2f68c5d2d39f73d8.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/66ec4792-5370c0730ddcc829.js"
+      src="/_next/static/chunks/66ec4792-5370c0730ddcc829.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/3147-f2365913fd3268bb.js"
+      src="/_next/static/chunks/3147-f2365913fd3268bb.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/5106-4ce3c74eafe3a7cd.js"
+      src="/_next/static/chunks/5106-4ce3c74eafe3a7cd.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/811-475bab1b767f159a.js"
+      src="/_next/static/chunks/811-475bab1b767f159a.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/563-cdd1f3d3749411c7.js"
+      src="/_next/static/chunks/563-cdd1f3d3749411c7.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/676-2925c9a005fe60ff.js"
+      src="/_next/static/chunks/676-2925c9a005fe60ff.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/681-1e2813902faf2aaf.js"
+      src="/_next/static/chunks/681-1e2813902faf2aaf.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/1724-72673139e9382068.js"
+      src="/_next/static/chunks/1724-72673139e9382068.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/7980-3bf693277f6fc8b5.js"
+      src="/_next/static/chunks/7980-3bf693277f6fc8b5.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/6168-5f48d904afa0954b.js"
+      src="/_next/static/chunks/6168-5f48d904afa0954b.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/7079-ce8a1af31b7c4c0a.js"
+      src="/_next/static/chunks/7079-ce8a1af31b7c4c0a.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/1959-8180a685dfbf68e4.js"
+      src="/_next/static/chunks/1959-8180a685dfbf68e4.js?v=v4anim"
       async=""
     ></script>
     <script
-      src="/_next/static/chunks/app/(client)/%5BinviteURL%5D/page-f00f957b325824a6.js"
+      src="/_next/static/chunks/app/(client)/%5BinviteURL%5D/page-f00f957b325824a6.js?v=v4anim"
       async=""
     ></script>
     
@@ -443,7 +577,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
     <meta name="next-size-adjust" />
     <script
-      src="/_next/static/chunks/polyfills-42372ed130431b0a.js"
+      src="/_next/static/chunks/polyfills-42372ed130431b0a.js?v=v4anim"
       nomodule=""
     ></script>
     <style
@@ -1841,20 +1975,7 @@ setInterval(() => {
             }
         }
         
-        // Always inject address under ФУРШЕТ regardless of color section
-        if (text.trim() === "ФУРШЕТ") {
-            if (!p.hasAttribute('data-address-added')) {
-                p.setAttribute('data-address-added', 'true');
-                let addr = document.createElement('div');
-                addr.textContent = "Октябрьский пр., 49";
-                addr.style.setProperty('color', 'rgba(255, 255, 255, 0.8)', 'important');
-                addr.style.setProperty('font-size', '16px', 'important');
-                addr.style.setProperty('margin-top', '8px', 'important');
-                addr.style.setProperty('text-align', 'center', 'important');
-                addr.style.setProperty('font-family', 'inherit', 'important');
-                p.parentNode.insertBefore(addr, p.nextSibling);
-            }
-        }
+        // Injected address removed; handled directly in template markup
         
         if (inProgramSection) {
             p.classList.remove('green-text-override');
@@ -1885,16 +2006,19 @@ setInterval(() => {
             if (namesColor) {
                 p.style.setProperty('color', namesColor, 'important');
             }
-        } else if (text === "ДАТА" || text.includes("ДАТА") || text.includes("ПРОВЕДЕНИЯ СВАДЬБЫ") || text.includes("СВАДЬБЫ") || text === "СОВСЕМ СКОРО" || text === "ДО ДНЯ" || text === "НАШЕЙ СВАДЬБЫ") {
+        } else if (text.includes("ЦВЕТЫ – ЭТО ПРЕКРАСНО") || text.includes("ВМЕСТО БУКЕТА ВЫ ПОДАРИТЕ") || text.includes("БУТЫЛОЧКУ ВАШЕГО ЛЮБИМОГО НАПИТКА")) {
+            p.style.removeProperty('color');
+            p.style.removeProperty('-webkit-text-fill-color');
+        } else if ((text === "ДАТА" || text.includes("ДАТА") || text.includes("ПРОВЕДЕНИЯ СВАДЬБЫ") || text.includes("СВАДЬБЫ") || text === "СОВСЕМ СКОРО" || text === "ДО ДНЯ" || text === "НАШЕЙ СВАДЬБЫ") && !text.includes("МЫ С РАДОСТЬЮ ПРИГЛАШАЕМ")) {
             p.style.setProperty('color', '#ffffff', 'important');
-        } else if (text.includes("ЦВЕТЫ – ЭТО ПРЕКРАСНО") || text.includes("ВМЕСТО БУКЕТА ВЫ ПОДАРИТЕ")) {
-            p.style.setProperty('color', 'rgba(255, 255, 255, 0.8)', 'important');
+            p.style.setProperty('-webkit-text-fill-color', '#ffffff', 'important');
         } else if (text.includes("VOPOUE") || text.includes("ДОРОГИЕ") || text.includes("НАШИ ГОСТИ") || text.includes("ЕСЛИ ВЫ ЧИТАЕТЕ") ||
             text.includes("СПАСИБО, ЧТО БЫЛИ С НАМИ") || text.includes("МЫ С РАДОСТЬЮ ПРИГЛАШАЕМ") ||
             text.includes("МЕСТО") || text === "ПРОВЕДЕНИЯ" || text.includes("ДЛЯ ВАШЕГО УДОБСТВА") ||
             text.includes("14:00") || text.includes("КАРЛА МАРКСА") || text.includes("25 НОЯБРЯ 2026") ||
-            text.includes("БУДЕМ РАДЫ") || text.includes("НА НАШЕМ ПРАЗДНИКЕ") || text.includes("НАШЕМ ПРАЗДНИКЕ")) {
+            text.includes("БУДЕМ РАДЫ ВИДЕТЬ ВАС") || text.includes("НА НАШЕМ ПРАЗДНИКЕ") || text.includes("НАШЕМ ПРАЗДНИКЕ")) {
             p.style.setProperty('color', '#0c2610', 'important');
+            p.style.setProperty('-webkit-text-fill-color', '#0c2610', 'important');
         }
     }
     
@@ -1962,7 +2086,7 @@ setInterval(() => {
                 }
                 // Also look for any maroon colored background inside this section
                 let bg = el.style.backgroundColor || getComputedStyle(el).backgroundColor;
-                if (bg === 'rgb(72, 58, 45)' || bg === '#483a2d' || bg === 'rgb(99, 23, 27)' || bg === '#63171b' || (bg.includes('rgb') && el.className.includes('control'))) {
+                if (bg === 'rgb(72, 58, 45)' || bg === '#534638' || bg === 'rgb(99, 23, 27)' || bg === '#63171b' || (bg.includes('rgb') && el.className.includes('control'))) {
                      if (el.hasAttribute('data-checked') || el.getAttribute('aria-checked') === 'true') {
                           el.style.setProperty('background-color', '#0c2610', 'important');
                           el.style.setProperty('border-color', '#0c2610', 'important');
@@ -2003,14 +2127,60 @@ setInterval(() => {
 }, 500);
 </script>
 <style>
-  /* Override backgrounds to #0c2610 */
+  /* Override backgrounds to #0c2610 without cutting off glows */
   body, html, main, .css-8iop5n, #WrapperClientPage {
     background-color: #0c2610 !important;
-    background-image: none !important;
   }
   section, main > div {
-    background-color: #0c2610 !important;
+    background-color: transparent !important;
   }
+  
+  /* 1:1 Eventrix Scroll & Entrance Animation Engine */
+  .eventrix-animated {
+    opacity: 0 !important;
+    transform: translateY(20px) !important;
+    transition-property: opacity, transform !important;
+    transition-duration: 0.8s !important;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+    will-change: opacity, transform;
+  }
+  .eventrix-animated.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+  .eventrix-animated:not(.is-visible) {
+    transition-delay: 0s !important;
+  }
+
+  /* Staggered transition delays matching Eventrix */
+  .hero__date { transition-delay: 0.1s !important; }
+  .hero__title { transition-delay: 0.28s !important; }
+
+  .program__item:nth-child(1) { transition-delay: 0.05s !important; }
+  .program__item:nth-child(2) { transition-delay: 0.15s !important; }
+  .program__item:nth-child(3) { transition-delay: 0.25s !important; }
+  .program__item:nth-child(4) { transition-delay: 0.35s !important; }
+  .program__item:nth-child(5) { transition-delay: 0.45s !important; }
+  .program__item:nth-child(6) { transition-delay: 0.55s !important; }
+
+  .dress-code__item:nth-child(1) { transition-delay: 0.04s !important; }
+  .dress-code__item:nth-child(2) { transition-delay: 0.10s !important; }
+  .dress-code__item:nth-child(3) { transition-delay: 0.16s !important; }
+  .dress-code__item:nth-child(4) { transition-delay: 0.22s !important; }
+  .dress-code__item:nth-child(5) { transition-delay: 0.28s !important; }
+  .dress-code__item:nth-child(6) { transition-delay: 0.34s !important; }
+  .dress-code__item:nth-child(7) { transition-delay: 0.40s !important; }
+
+  .contacts__block .contacts__wrap:nth-of-type(1), .contacts__wrap:nth-child(2) { transition-delay: 0.05s !important; }
+  .contacts__block .contacts__wrap:nth-of-type(2), .contacts__wrap:nth-child(3) { transition-delay: 0.15s !important; }
+  .contacts__block .contacts__wrap:nth-of-type(3), .contacts__wrap:nth-child(4) { transition-delay: 0.25s !important; }
+  .contacts__block .contacts__wrap:nth-of-type(4), .contacts__wrap:nth-child(5) { transition-delay: 0.35s !important; }
+
+  .contacts__items .contacts__item:nth-child(1) { transition-delay: 0.05s !important; }
+  .contacts__items .contacts__item:nth-child(2) { transition-delay: 0.15s !important; }
+  .contacts__items .contacts__item:nth-child(3) { transition-delay: 0.25s !important; }
+
+  .invite__bottom { transition-delay: 0.15s !important; }
 </style>
 </head>
   <body>
@@ -2036,7 +2206,7 @@ setInterval(() => {
     ><!--/$--><span
     ></span><span id="__chakra_env" hidden=""></span>
     <script
-      src="/_next/static/chunks/webpack-7c3cda58df76be79.js"
+      src="/_next/static/chunks/webpack-7c3cda58df76be79.js?v=v4anim"
       async=""
     ></script>
     <script>
@@ -2085,6 +2255,91 @@ setInterval(() => {
         'tatic/chunks/563-cdd1f3d3749411c7.js","676","static/chunks/676-2925c9a005fe60ff.js","5184","static/chunks/5184-b1bae0db862ed3e3.js","681","static/chunks/681-1e2813902faf2aaf.js","1724","static/chunks/1724-72673139e9382068.js","7980","static/chunks/7980-3bf693277f6fc8b5.js","6168","static/chunks/6168-5f48d904afa0954b.js","7079","static/chunks/7079-ce8a1af31b7c4c0a.js","1959","static/chunks/1959-8180a685dfbf68e4.js","2088","static/chunks/app/(client)/%5BinviteURL%5D/page-f00f957b325824a6.js"],"default"]\n1e:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"}],["$","meta","1",{"name":"color-scheme","content":"only light"}],["$","meta","2",{"charSet":"utf-8"}],["$","title","3",{"children":"Приглашение на свадьбу"}],["$","meta","4",{"name":"description","content":"Приглашение на свадьбу"}],["$","meta","5",{"name":"robots","content":"noindex, nofollow"}],["$","meta","6",{"name":"google","content":"notranslate"}],["$","link","7",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","meta","8",{"name":"next-size-adjust"}]]\n15:null\n16:[["$","$L21",null,{"inviteURL":"47346WmjuON1HvoGFe850","templateId":"$undefined","themeTemplate":"light","guestURL":"$undefined","noView":"$undefined","type":"$undefined"}],["$","$22",null,{"fallback":"$undefined","children":["$","$L23",null,{"type":"invite"}]}],["$","$L24",null,{"tag":"invite"}]]\n',
       ]);
     </script>
+  
+    <script>
+      (function() {
+        if (typeof window === 'undefined') return;
+
+        var animSelector = [
+          'section.hero', '.hero__date', '.hero__title',
+          'section.about', '.about__content', '.about__image',
+          'section.history', '.history__title', '.history__text',
+          'section.date', '.date__title', '.date__value', '.date__calendar',
+          'section.place', '.place__container',
+          'section.program', '.program__title', '.program__body', '.program__item',
+          'section.dress-code', '.dress-code__title', '.dress-code__column', '.dress-code__item',
+          'section.column-questions', '.column-questions__caption', '.column-questions__timer', '.column-questions__heading',
+          '.questions__form', '.questions__title', '.questions__body',
+          'section.contacts', '.contacts__block', '.contacts__title', '.contacts__heading', '.contacts__wrap', '.contacts__item', '.contacts__box',
+          'section.invite', '.invite__top', '.invite__bottom'
+        ].join(', ');
+
+        var observer = null;
+        if ('IntersectionObserver' in window) {
+          observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              var el = entry.target;
+              var isHero = el.classList.contains('hero') || el.classList.contains('hero__date') || el.classList.contains('hero__title');
+              if (entry.isIntersecting) {
+                el.classList.add('is-visible');
+              } else {
+                if (!isHero) {
+                  el.classList.remove('is-visible');
+                }
+              }
+            });
+          }, {
+            rootMargin: '0px 0px -40px 0px',
+            threshold: 0.05
+          });
+        }
+
+        window.__initEventrixAnimations = function() {
+          var elements = document.querySelectorAll(animSelector);
+          if (!elements.length) return;
+
+          elements.forEach(function(el) {
+            if (el.dataset.eventrixReady) return;
+            el.dataset.eventrixReady = 'true';
+
+            var isHero = el.classList.contains('hero') || el.classList.contains('hero__date') || el.classList.contains('hero__title');
+            var rect = el.getBoundingClientRect();
+            var inView = (rect.top < window.innerHeight - 30) && (rect.bottom > 30);
+
+            el.classList.add('eventrix-animated');
+
+            if (isHero) {
+              if (window.scrollY < 150) {
+                var delay = el.classList.contains('hero__title') ? 280 : (el.classList.contains('hero__date') ? 100 : 30);
+                setTimeout(function() {
+                  el.classList.add('is-visible');
+                }, delay);
+              } else {
+                el.classList.add('is-visible');
+              }
+            } else {
+              if (inView && window.scrollY > 0) {
+                el.classList.add('is-visible');
+                if (observer) observer.observe(el);
+              } else if (observer) {
+                observer.observe(el);
+              } else {
+                el.classList.add('is-visible');
+              }
+            }
+          });
+        };
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', window.__initEventrixAnimations);
+        } else {
+          window.__initEventrixAnimations();
+        }
+        window.addEventListener('load', window.__initEventrixAnimations);
+        setInterval(window.__initEventrixAnimations, 400);
+      })();
+    </script>
+
   </body>
 </html>
 <style

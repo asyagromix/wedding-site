@@ -7,3 +7,5 @@ venv/
 
 guest_responses.json
 guest_responses.txt
+
+*.bak

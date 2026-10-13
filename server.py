@@ -11,6 +11,12 @@ PORT = int(os.environ.get("PORT", 8000))
 VK_TOKEN = "vk1.a.GZqjYnIiyHtMKq7UfWz3-SzU5KabyxA40z0cu-FHiQ7_wxHTl5rSXRwm0IcLR2gk0ebpDhmZNsoIcDTIvMAcHJL1EOAJB87HSIjUdqpmdO7_BK2UR5wNfVHI1D2EmcSJs-Q_tolKJI41OwPubAGcyUc5HGcRewdp8kq0fD67OvxsW4PC4ICijUiolvzRZPdluCT1jKsEMn0AbGI3VbPEXQ"
 
 class ProxyHandler(http.server.SimpleHTTPRequestHandler):
+    def end_headers(self):
+        self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
+        self.send_header('Pragma', 'no-cache')
+        self.send_header('Expires', '0')
+        super().end_headers()
+
     def do_POST(self):
         content_length = int(self.headers.get('Content-Length', 0))
         post_data = self.rfile.read(content_length)
@@ -214,11 +220,7 @@ class ProxyHandler(http.server.SimpleHTTPRequestHandler):
                                 if "map" in block.get("blocks", {}) and "data" in block["blocks"]["map"] and "d" in block["blocks"]["map"]["data"]:
                                     block["blocks"]["map"]["data"]["d"]["address"] = "ул. Карла Маркса, 23, Киров, Кировская обл.,"
                                     block["blocks"]["map"]["data"]["d"]["coords"] = "58.6137, 49.6662"
-                            elif block.get("id") == "Program":
-                                if "PR" in block.get("blocks", {}) and "data" in block["blocks"]["PR"] and "items" in block["blocks"]["PR"]["data"]:
-                                    for item in block["blocks"]["PR"]["data"]["items"]:
-                                        if item.get("time") == "16:00" and "Фуршет" in item.get("title", ""):
-                                            item["desc"] = "Октябрьский пр., 49"
+
                             elif block.get("id") == "Contacts":
                                 if "cts" in block.get("blocks", {}) and "data" in block["blocks"]["cts"] and "cts" in block["blocks"]["cts"]["data"]:
                                     for ct in block["blocks"]["cts"]["data"]["cts"]:
