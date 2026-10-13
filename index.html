@@ -240,25 +240,7 @@
 
     `;
     
-    // Inject into body to ensure it overrides <head>
-<script>
-(function() {
-  var origDesc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
-  if (origDesc && origDesc.set) {
-    Object.defineProperty(HTMLScriptElement.prototype, 'src', {
-      set: function(val) {
-        if (typeof val === 'string' && val.indexOf('/_next/') !== -1 && val.indexOf('t=') === -1) {
-          val = val + (val.indexOf('?') !== -1 ? '&' : '?') + 't=' + Date.now();
-        }
-        return origDesc.set.call(this, val);
-      },
-      get: function() {
-        return origDesc.get.call(this);
-      }
-    });
-  }
-})();
-</script> Emotion styles
+    // Inject into body to ensure it overrides <head> Emotion styles
     const injectStyle = () => {
         if (document.body) {
             document.body.appendChild(style);
@@ -297,7 +279,6 @@
     window.fetch = async function() {
       const url = arguments[0];
       if (typeof url === "string" && url.includes("/api/invites/get/byURL")) {
-        
         return new Response(JSON.stringify(mockedApiData), {
           status: 200,
           headers: {"Content-Type": "application/json"}
@@ -2152,9 +2133,34 @@ setInterval(() => {
     transition-delay: 0s !important;
   }
 
+  /* 1:1 Eventrix Hero Entrance Animations - Pure silky smooth text glide */
+  @keyframes eventrixHeroFadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero__date {
+    animation: eventrixHeroFadeUp 0.65s cubic-bezier(0, 0, 0.58, 1) 0.15s both !important;
+    will-change: opacity, transform;
+  }
+
+  .hero__sub-title {
+    animation: eventrixHeroFadeUp 0.65s cubic-bezier(0, 0, 0.58, 1) 0.15s both !important;
+    will-change: opacity, transform;
+  }
+
+  .hero__title {
+    animation: eventrixHeroFadeUp 0.65s cubic-bezier(0, 0, 0.58, 1) 0.55s both !important;
+    will-change: opacity, transform;
+  }
+
   /* Staggered transition delays matching Eventrix */
-  .hero__date { transition-delay: 0.1s !important; }
-  .hero__title { transition-delay: 0.28s !important; }
 
   .program__item:nth-child(1) { transition-delay: 0.05s !important; }
   .program__item:nth-child(2) { transition-delay: 0.15s !important; }
@@ -2261,7 +2267,6 @@ setInterval(() => {
         if (typeof window === 'undefined') return;
 
         var animSelector = [
-          'section.hero', '.hero__date', '.hero__title',
           'section.about', '.about__content', '.about__image',
           'section.history', '.history__title', '.history__text',
           'section.date', '.date__title', '.date__value', '.date__calendar',
